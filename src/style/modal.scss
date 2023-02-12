@@ -1,0 +1,408 @@
+@mixin flex-cen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes modal {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes modal-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.4rem;
+  width: 6rem;
+  height: 6rem;
+  z-index: 9999999999;
+  &:hover {
+    color: #fcd462;
+  }
+}
+
+//css modal poduct
+#modal-product {
+  .modal-wraper {
+    display: none;
+    &.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      z-index: 999999999999;
+      .modal-content {
+        animation: modal 0.4s linear;
+      }
+      .overlay {
+        opacity: 1;
+      }
+    }
+    .modal-content {
+      max-width: 100rem;
+      padding: 5.5rem 4rem;
+      position: relative;
+      transition: all 0.4s;
+      margin: 0 2.4rem;
+      .detail-img {
+        height: 100%;
+        @include flex-cen;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .detail-content {
+        .product-title {
+          font-size: 2.8rem;
+        }
+        .product-rating {
+          .rate-quantity {
+            font-size: 1.2rem;
+            color: #fff;
+            padding-left: 1rem;
+          }
+        }
+        .product-price {
+          .new-price {
+            font-size: 2.4rem;
+          }
+        }
+        .other-info {
+          display: flex;
+          .info-item {
+            @include flex-cen;
+            .text-red {
+              color: red;
+            }
+            h6 {
+              margin-bottom: 0 !important;
+            }
+            span {
+              color: #28a745;
+            }
+          }
+        }
+        .color {
+          label {
+            margin-bottom: 0.8rem;
+            color: #fff;
+            font-weight: 600;
+          }
+          .color-box {
+            span {
+              border-radius: 0;
+              display: inline-block;
+              background-color: #272626;
+              cursor: pointer;
+              transition: 0.3s;
+              margin: 0 0.5rem 0.5rem 0;
+              font-size: 1.2rem;
+              position: relative;
+              padding: 1rem 2rem;
+              color: #ffffff;
+              &:hover {
+                background-color: #fcd462;
+              }
+            }
+          }
+        }
+        .add-to-cart {
+          display: flex;
+          max-height: 6rem;
+          .quantity-box {
+            @include flex-cen;
+            padding-right: 4rem;
+            .minus,
+            .plus,
+            .number {
+              height: 100%;
+            }
+            button {
+              font-size: 3rem;
+              &:hover {
+                background-color: #fcd462;
+              }
+            }
+            .number {
+              @include flex-cen;
+              padding: 0 2rem;
+              background-color: #272626;
+              color: #fff;
+              min-width: 7rem;
+            }
+          }
+          .add-btn {
+            background-color: transparent !important;
+          }
+        }
+        .tags {
+          display: flex;
+          h6 {
+            font-size: 1.4rem;
+          }
+          ul {
+            display: flex;
+            margin-left: 1.5rem;
+            li {
+              margin-right: 1rem;
+              font-family: "Roboto";
+              a {
+                color: #a3a3a3;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//end
+
+//css modal login
+#modal-login {
+  display: none;
+  &.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include flex-cen;
+    z-index: 9999999999;
+    background: #1c1b19;
+    height: 100vh;
+  }
+  .row {
+    margin: 0 !important;
+    .col {
+      padding: 0 !important;
+    }
+  }
+  .modal-wraper {
+    .login-img {
+      position: relative;
+      @include flex-cen;
+      .img {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 999;
+        h2 {
+          margin-bottom: 2rem;
+          font-weight: 600;
+          color: #fff;
+          font-size: 3.6rem;
+          text-transform: capitalize;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    .login-form {
+      padding: 6rem;
+      text-align: center;
+      background-color: transparent;
+      height: 100%;
+      border: 0.1rem solid;
+      @include flex-cen;
+      flex-direction: column;
+      border-color: #40403b #40403b #40403b transparent;
+      .title {
+        font-size: 3.6rem;
+        margin-bottom: 5rem;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      form {
+        .input-box {
+          margin-bottom: 1rem;
+          input {
+            margin-bottom: 2rem;
+            display: block;
+            border: 0;
+            height: 6rem;
+            padding: 0 5rem 0 3rem;
+            background-color: #353530;
+            color: #a3a3a3;
+            width: 100%;
+          }
+        }
+        .forgot-link {
+          text-decoration: underline;
+          color: #fff;
+          display: block;
+          text-transform: capitalize;
+        }
+        .login-btn {
+          line-height: 4.4rem;
+          background: transparent;
+        }
+        .form-seperator {
+          display: block;
+          text-transform: uppercase;
+          margin: 3rem 0;
+          text-align: center;
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            background-color: rgb(255 245 245 / 55%);
+            height: 1px;
+            width: 100%;
+            left: 0;
+            top: 40%;
+          }
+          span {
+            position: relative;
+            display: inline-block;
+            background-color: #1c1b19;
+            min-width: 8rem;
+            z-index: 999;
+          }
+        }
+        .social-log {
+          margin-bottom: 1rem;
+          a {
+            line-height: 4.5rem;
+            width: 100%;
+            margin-bottom: 2rem;
+            img {
+              width: 3rem;
+              margin-right: 0.6rem;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//end
+
+//responsive
+@media screen and (max-width: 1400px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+  #modal-product {
+    .modal-wraper {
+      .modal-content {
+        height: 100vh;
+        overflow-y: auto;
+        padding: 8rem 4rem;
+        .row {
+          justify-content: center;
+        }
+        .detail-content {
+          margin-top: 6rem;
+        }
+      }
+    }
+  }
+
+  #modal-login {
+    .close-btn {
+      top: 0;
+      right: 0;
+    }
+    .modal-wraper {
+      .login-img {
+        display: none;
+      }
+      .modal-content {
+        .row {
+          justify-content: center;
+          .login-form {
+            border-left-color: #40403b;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  #modal-product {
+    .modal-wraper {
+      .modal-content {
+        .detail-content {
+          text-align: center;
+          .other-info {
+            flex-direction: column;
+            .info-item {
+              h6 {
+                margin-left: 0 !important;
+              }
+            }
+          }
+          .short-des {
+            text-align: justify;
+          }
+          .add-to-cart {
+            flex-direction: column;
+            max-height: unset;
+            .quantity-box {
+              height: 5rem;
+              padding-right: 0;
+              margin-bottom: 2rem;
+            }
+          }
+          .tags {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+}
+//
