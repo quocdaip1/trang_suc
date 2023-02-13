@@ -123,7 +123,7 @@ const ModalProduct = (props) => {
                         </div>
                         <button
                           onClick={() => handleAddtoCart(item, quantity)}
-                          className="add-btn main-btn"
+                          className="add-btn btn border-btn"
                         >
                           <span>add to cart</span>
                         </button>

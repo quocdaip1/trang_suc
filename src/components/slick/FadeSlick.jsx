@@ -13,7 +13,6 @@ const FadeSlick = (props) => {
     autoplaySpeed: 5000,
   };
   return (
-    <div>
       <Slider {...settings}>
         <div className="banner-img imagesiny">
           <img loading="lazy" src="https://i.postimg.cc/g07x79fP/download.jpg" />
@@ -22,7 +21,6 @@ const FadeSlick = (props) => {
           <img loading="lazy" src="https://i.postimg.cc/y628CXQ0/download.jpg" />
         </div>
       </Slider>
-    </div>
   );
 };
 

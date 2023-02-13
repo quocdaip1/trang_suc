@@ -143,7 +143,7 @@ const IndexPage = (props) => {
           <div className="container">
             <div className="row">
               {/* baner left */}
-              <div className="col col-lg-6 col-md-6">
+              <div className="col col-lg-6 col-md-6 col-sm-8 col-12">
                 <div className="col-left-wraper">
                   <div className="banner-text ">
                     <span
@@ -169,12 +169,12 @@ const IndexPage = (props) => {
                   >
                     <ul className="btn-list">
                       <li>
-                        <a className="main-btn" href="#">
+                        <a className="btn border-btn" href="#">
                           <span>buy now</span>
                         </a>
                       </li>
                       <li>
-                        <a className="main-btn" href="#">
+                        <a className="btn main-btn" href="#">
                           <span>explore now</span>
                         </a>
                       </li>
@@ -184,7 +184,7 @@ const IndexPage = (props) => {
               </div>
               {/* end banner left */}
               {/* banner right */}
-              <div className="col col-lg-6 col-md-6">
+              <div className="col col-lg-6 col-md-6 col-12">
                 <div
                   className="col-right-wraper "
                   data-aos="fade-left"
@@ -401,7 +401,7 @@ const IndexPage = (props) => {
                     saepe iure quibusdam doloribus explicabo unde, officia
                     natus, amet eum! Explicabo repellat aliquid eius!
                   </p>
-                  <a href="#" className="link about-link main-btn">
+                  <a href="#" className="link about-link btn main-btn">
                     <span>know more</span>
                   </a>
                 </div>
@@ -442,8 +442,8 @@ const IndexPage = (props) => {
                     saepe iure quibusdam doloribus explicabo unde, officia
                     natus, amet eum! Explicabo repellat aliquid eius!
                   </p>
-                  <a href="#" className="link sell-link main-btn">
-                    <span>shop now</span>
+                  <a href="#" className="link sell-link btn border-btn">
+                    <span>show more</span>
                   </a>
                 </div>
               </div>
@@ -840,7 +840,7 @@ const IndexPage = (props) => {
                     quasi, eligendi repellat minus, aliquam nesciunt facilis et
                     voluptatem minima at, nulla quidem.
                   </p>
-                  <a href="#" className="main-btn">
+                  <a href="#" className="btn main-btn">
                     <span>see more</span>
                   </a>
                 </div>

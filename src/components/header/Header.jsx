@@ -407,7 +407,7 @@ export default function () {
                     </div>
 
                     <div className="cart-btn w-100">
-                      <Link to={"/jwelry/cart"} className="main-btn w-100">
+                      <Link to={"/jwelry/cart"} className="btn main-btn w-100">
                         <span>view cart</span>
                       </Link>
                     </div>
@@ -473,7 +473,7 @@ export default function () {
                         />
                       </div>
                     )}
-                    <ul className="cart-box">
+                    <ul className="cart-box scroll-custom">
                       {cartRedux.cart.length
                         ? cartRedux.cart.map((item) => {
                             return (
@@ -505,7 +505,7 @@ export default function () {
                     </div>
 
                     <div className="cart-btn w-100">
-                      <Link className="main-btn w-100" to={"/jwelry/cart"}>
+                      <Link className="btn main-btn w-100" to={"/jwelry/cart"}>
                         <span>view cart</span>
                       </Link>
                     </div>

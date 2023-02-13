@@ -74,7 +74,7 @@ const ProductPage = () => {
                   <div className="col col-lg-4 col-md-10 col-sm-10 col-12">
                     <div className="filter-wraper">
                       <div className="heading">
-                        <button className="main-btn rs-btn">
+                        <button className="btn main-btn rs-btn">
                           <span>clear filter</span>
                         </button>
                       </div>

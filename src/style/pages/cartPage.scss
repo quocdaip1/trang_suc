@@ -1,9 +1,9 @@
 @import "../__global/_config.scss";
 
 #cart-page {
+  overflow: hidden;
   #main {
     .title {
-      margin-left: 1.5rem;
       span {
         font-weight: 700;
         text-transform: uppercase;
@@ -28,7 +28,6 @@
         }
       }
       .cart-content {
-        margin: 0 -1.5rem;
         padding-top: 2.4rem;
         .cart-product {
           border-right: 0.1rem solid #40403b;

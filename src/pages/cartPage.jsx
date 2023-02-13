@@ -59,7 +59,7 @@ const CartPage = () => {
         <div className="container">
           <div className="cart-wraper">
             <div className="cart-header">
-              <Link className="main-btn" to={"/jewelry/shop"}>
+              <Link className="btn main-btn" to={"/jewelry/shop"}>
                 <span>buy more</span>
               </Link>
               <div className="sub-total">
@@ -189,7 +189,7 @@ const CartPage = () => {
                           </label>
                         </div>
                       </div>
-                      <button className="main-btn rs-btn">
+                      <button className="btn main-btn rs-btn">
                         <span>accept</span>
                       </button>
                     </div>

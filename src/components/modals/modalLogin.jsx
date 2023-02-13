@@ -7,25 +7,26 @@ const ModalLogin = (props) => {
   const { modalLoginOpen, setModalLoginOpen } = mContext;
   return (
     <div id="modal-login" className={`${modalLoginOpen ? "active" : ""}`}>
-      <div className="modal-wraper">
-        <div className="close-login">
-          <button
-            onClick={() => {
-              setModalLoginOpen(false);
-              componentUnmount()
-            }}
-            className="close-btn rs-btn"
-          >
-            <i className="fa-solid fa-x"></i>
-          </button>
-        </div>
-        <div className="modal-content">
-          <div className="container">
+      <div className="container">
+        <div className="modal-wraper">
+          <div className="close-login">
+            <button
+              onClick={() => {
+                setModalLoginOpen(false);
+                componentUnmount();
+              }}
+              className="close-btn rs-btn"
+            >
+              <i className="fa-solid fa-x"></i>
+            </button>
+          </div>
+          <div className="modal-content">
             <div className="row">
-              <div className="col col-lg-6 col-md-12">
-                <div className="login-img">
-                  <div className="img">
-                    <img loading="lazy"
+              <div className="col col-lg-6 col-md-12 col-12">
+                <div className="login-img h-100 ">
+                  <div className="img h-100">
+                    <img className="h-100"
+                      loading="lazy"
                       src="https://i.postimg.cc/W43Skg8q/download.png"
                       alt=""
                     />
@@ -41,33 +42,35 @@ const ModalLogin = (props) => {
                 </div>
               </div>
               <div className="col col-lg-6 col-md-8">
-                <div className="login-form">
+                <div className="login-form w-100">
                   <h2 className="title">login</h2>
-                  <form>
+                  <form className="w-100">
                     <div className="form-wraper">
-                      <div className="input-box">
+                      <div className="input-box w-100">
                         <input type="text" placeholder="UserName" />
                         <input type="password" placeholder="PassWord" />
                       </div>
                       <a className="forgot-link" href="#">
                         forgot password
                       </a>
-                      <button className="login-btn main-btn mt-20">
+                      <button className="btn login-btn border-btn mt-20">
                         <span>login</span>
                       </button>
                       <span className="form-seperator">
                         <span>or</span>
                       </span>
-                      <div className="social-log">
-                        <a href="#" className="main-btn">
-                          <img loading="lazy"
+                      <div className="social-log w-100">
+                        <a href="#" className="btn main-btn">
+                          <img
+                            loading="lazy"
                             src="https://i.postimg.cc/wvVBspRT/image.png"
                             alt=""
                           />
                           <span>continue with facebook</span>
                         </a>
-                        <a href="#" className="main-btn">
-                          <img loading="lazy"
+                        <a href="#" className="btn main-btn">
+                          <img
+                            loading="lazy"
                             src="https://i.postimg.cc/Yq1t4kcc/image.png"
                             alt=""
                           />

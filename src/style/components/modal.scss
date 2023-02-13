@@ -1,5 +1,4 @@
-@import '../__global/_config.scss';
-
+@import "../__global/_config.scss";
 
 @keyframes modal {
   0% {
@@ -40,7 +39,7 @@
   .modal-wraper {
     display: none;
     &.active {
-      @include flex(center,center);
+      @include flex(center, center);
       position: fixed;
       top: 0;
       left: 0;
@@ -63,7 +62,7 @@
       margin: 0 2.4rem;
       .detail-img {
         height: 100%;
-        @include flex(center,center);
+        @include flex(center, center);
         img {
           width: 100%;
           object-fit: cover;
@@ -88,7 +87,7 @@
         .other-info {
           display: flex;
           .info-item {
-            @include flex(center,center);
+            @include flex(center, center);
             .text-red {
               color: red;
             }
@@ -117,7 +116,7 @@
               font-size: 1.2rem;
               position: relative;
               padding: 1rem 2rem;
-              color: var(--white)fff;
+              color: var(--white) fff;
               &:hover {
                 background-color: var(--primary-color);
               }
@@ -128,7 +127,7 @@
           display: flex;
           max-height: 6rem;
           .quantity-box {
-            @include flex(center,center);
+            @include flex(center, center);
             padding-right: 4rem;
             .minus,
             .plus,
@@ -142,7 +141,7 @@
               }
             }
             .number {
-              @include flex(center,center);
+              @include flex(center, center);
               padding: 0 2rem;
               background-color: #272626;
               color: var(--white);
@@ -187,7 +186,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    @include flex(center,center);
+    @include flex(center, center);
     z-index: 9999999999;
     background: #1c1b19;
     height: 100vh;
@@ -201,7 +200,7 @@
   .modal-wraper {
     .login-img {
       position: relative;
-      @include flex(center,center);
+      @include flex(center, center);
       .img {
         width: 100%;
         img {
@@ -235,11 +234,12 @@
     }
     .login-form {
       padding: 6rem;
+      height: 100%;
       text-align: center;
       background-color: transparent;
-      height: 100%;
+      width: 45rem;
       border: 0.1rem solid;
-      @include flex(center,center);
+      @include flex(center, center);
       flex-direction: column;
       border-color: #40403b #40403b #40403b transparent;
       .title {
@@ -250,62 +250,67 @@
         text-transform: uppercase;
       }
       form {
-        .input-box {
-          margin-bottom: 1rem;
-          input {
-            margin-bottom: 2rem;
+        .form-wraper {
+          @include flex(center,unset);
+          flex-direction: column;
+          .input-box {
+            margin-bottom: 1rem;
+            input {
+              margin-bottom: 2rem;
+              display: block;
+              border: 0;
+              height: 6rem;
+              padding: 0 5rem 0 3rem;
+              background-color: #353530;
+              color: var(--gray-1);
+              width: 100%;
+            }
+          }
+          .forgot-link {
+            text-decoration: underline;
+            color: var(--white);
             display: block;
-            border: 0;
-            height: 6rem;
-            padding: 0 5rem 0 3rem;
-            background-color: #353530;
-            color: var(--gray-1);
-            width: 100%;
+            text-transform: capitalize;
           }
-        }
-        .forgot-link {
-          text-decoration: underline;
-          color: var(--white);
-          display: block;
-          text-transform: capitalize;
-        }
-        .login-btn {
-          line-height: 4.4rem;
-          background: transparent;
-        }
-        .form-seperator {
-          display: block;
-          text-transform: uppercase;
-          margin: 3rem 0;
-          text-align: center;
-          position: relative;
-          &::after {
-            position: absolute;
-            content: "";
-            background-color: rgb(255 245 245 / 55%);
-            height: 1px;
-            width: 100%;
-            left: 0;
-            top: 40%;
+          .login-btn {
+            line-height: 4.4rem;
+            background: transparent;
           }
-          span {
+          .form-seperator {
+            display: block;
+            text-transform: uppercase;
+            margin: 3rem 0;
+            text-align: center;
             position: relative;
-            display: inline-block;
-            background-color: #1c1b19;
-            min-width: 8rem;
-            z-index: 999;
-          }
-        }
-        .social-log {
-          margin-bottom: 1rem;
-          a {
-            line-height: 4.5rem;
-            width: 100%;
-            margin-bottom: 2rem;
-            img {
-              width: 3rem;
-              margin-right: 0.6rem;
+            &::after {
+              position: absolute;
+              content: "";
+              background-color: rgb(255 245 245 / 55%);
+              height: 1px;
+              width: 100%;
+              left: 0;
+              top: 40%;
+            }
+            span {
               position: relative;
+              display: inline-block;
+              background-color: #1c1b19;
+              min-width: 8rem;
+              z-index: 999;
+            }
+          }
+          .social-log {
+            margin-bottom: 1rem;
+            a {
+              @include flex(center, center);
+              line-height: 4.5rem;
+              width: 100%;
+              margin-bottom: 2rem;
+              img {
+                width: 3rem;
+                margin-right: 0.6rem;
+                position: relative;
+              }
             }
           }
         }
@@ -392,7 +397,7 @@
           }
           .tags {
             flex-direction: column;
-            @include flex(center,center);
+            @include flex(center, center);
           }
         }
       }
