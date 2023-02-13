@@ -182,16 +182,8 @@ const Footer = () => {
           {/* end footer center */}
 
           {/* footer bottom */}
-          <div
-            className="ft-bottom bg-35"
-            data-aos="zoom-out-up"
-            data-aos-duration="600"
-          >
-            <div
-              className="coppy-right"
-              data-aos="zoom-out-up"
-              data-aos-duration="600"
-            >
+          <div className="ft-bottom bg-35">
+            <div className="coppy-right">
               <i className="fa-solid fa-copyright"></i>
               <p>Coppyright By</p>
               <span>Heart</span>

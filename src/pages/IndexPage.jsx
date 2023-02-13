@@ -11,16 +11,18 @@ import { useContext, useEffect, useState } from "react";
 import ModalLogin from "../components/modals/modalLogin";
 import { componentDidMount, componentUnmount } from "../service/utils";
 import { myContext } from "../components/context/Context";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "../redux/Reducer/dataSlice";
 
 const IndexPage = (props) => {
-  const mContext = useContext(myContext);
-  const { fullProduct } = mContext;
+  const dataRedux = useSelector((state) => state.data);
 
   //video state
   const [videoOpen, setVideoOpen] = useState(false);
   //end
 
-  const saleProduct = fullProduct.filter((item) => {
+  const saleProduct = dataRedux.data.filter((item) => {
     return item.onsale;
   });
 
@@ -207,7 +209,7 @@ const IndexPage = (props) => {
               <div className="row">
                 <div className="col col-lg-3 col-sm-6">
                   <div className="col-wraper">
-                    <a href="#">
+                    <Link to={"/jewelry/bracelet"}>
                       <div className="img">
                         <img
                           src="https://i.postimg.cc/hGCy9NMv/9056425.gif"
@@ -222,12 +224,12 @@ const IndexPage = (props) => {
                           alt=""
                         />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col col-lg-3 col-sm-6">
                   <div className="col-wraper">
-                    <a href="#">
+                    <Link to={"/jewelry/diamond ring"}>
                       <div className="img">
                         <img
                           src="https://i.postimg.cc/KYL7YVVC/8722086.gif"
@@ -242,12 +244,12 @@ const IndexPage = (props) => {
                           alt=""
                         />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col col-lg-3 col-sm-6">
                   <div className="col-wraper">
-                    <a href="#">
+                    <Link to={"/jewelry/necklace"}>
                       <div className="img">
                         <img
                           src="https://i.postimg.cc/YCVK7GKb/9056449.gif"
@@ -262,12 +264,12 @@ const IndexPage = (props) => {
                           alt=""
                         />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col col-lg-3 col-sm-6">
                   <div className="col-wraper">
-                    <a href="#">
+                    <Link to={"/jewelry/earring"}>
                       <div className="img">
                         <img
                           src="https://i.postimg.cc/02QBNkC3/9056432.gif"
@@ -282,7 +284,7 @@ const IndexPage = (props) => {
                           alt=""
                         />
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -475,7 +477,7 @@ const IndexPage = (props) => {
             </div>
             <div className="products-wraper">
               <Slick show={4} row={2} custom={breakpoint.product}>
-                {fullProduct.map((item) => {
+                {dataRedux.data.map((item) => {
                   return <ItemSlick key={uuid()} item={item} />;
                 })}
               </Slick>

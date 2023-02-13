@@ -13,10 +13,11 @@ import CartItem from "../slick/CartItem";
 
 export default function () {
   const mContext = useContext(myContext);
-  const { setModalLoginOpen, fullProduct } = mContext;
+  const { setModalLoginOpen } = mContext;
 
   //cart redux
   const cartRedux = useSelector((state) => state.cart);
+  const dataRedux = useSelector((state) => state.data);
   //end
 
   //search
@@ -66,7 +67,7 @@ export default function () {
 
   //header tabs
   const [tab, setTab] = useState("Ring");
-  const cate = fullProduct.filter((item) => {
+  const cate = dataRedux.data.filter((item) => {
     return (
       item.onsale &&
       item.name /* .toLowerCase() */
@@ -544,42 +545,53 @@ export default function () {
                   >
                     <div className="overlay"></div>
                     <div className="menu-inner bg-black">
-                      {/* mobile search */}
-                      <div className="search-mb">
-                        <input
-                          onChange={(e) => setSearchText(e.target.value)}
-                          type="search"
-                          value={searchText}
-                          placeholder="Start typing to Search..."
-                        />
-                        <div className="search-mb-result bg-black">
-                          {searchText == 0 ? (
-                            ""
-                          ) : loading ? (
-                            <div className="loading">
-                              <Loading />
-                            </div>
-                          ) : listSearch.length === 0 ? (
-                            <img src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
-                          ) : (
-                            <div className="mb-result-wraper scroll-custom">
-                              <div className="row">
-                                {listSearch.map((item) => {
-                                  return (
-                                    <>
-                                      <div key={uuid()} className="col-12">
-                                        <ItemSlick item={item} />
-                                      </div>
-                                    </>
-                                  );
-                                })}
-                                <div className="search-end">NOTHING ELSE</div>
+                      {/* aside button
+                       */}
+                      <div className="menu-btn">
+                        {/* mobile search */}
+                        <div className="search-mb">
+                          <div className="input-group">
+                            <input
+                              onChange={(e) => setSearchText(e.target.value)}
+                              type="search"
+                              value={searchText}
+                            />
+                          </div>
+                          <div className="search-mb-result bg-black">
+                            {searchText == 0 ? (
+                              ""
+                            ) : loading ? (
+                              <div className="loading">
+                                <Loading />
                               </div>
-                            </div>
-                          )}
+                            ) : listSearch.length === 0 ? (
+                              <img src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
+                            ) : (
+                              <div className="mb-result-wraper scroll-custom">
+                                <div className="row">
+                                  {listSearch.map((item) => {
+                                    return (
+                                      <>
+                                        <div
+                                          key={uuid()}
+                                          className="col col-12"
+                                        >
+                                          <ItemSlick item={item} />
+                                        </div>
+                                      </>
+                                    );
+                                  })}
+                                  <div className="search-end">NOTHING ELSE</div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         </div>
+                        {/* end mobile search */}
+
+                        {/* end aside button */}
                       </div>
-                      {/* end mobile search */}
+
                       {/* aside-menu mobile */}
                       <ul className="menu-list">
                         <li>
@@ -615,10 +627,10 @@ export default function () {
                           }`}
                         >
                           <li>
-                            <Link to={"/jewelry/rings"}>Rings</Link>
+                            <Link to={"/jewelry/diamond ring"}>Rings</Link>
                           </li>
                           <li>
-                            <Link to={"/jewelry/nacklaces"}>Necklaces</Link>
+                            <Link to={"/jewelry/necklaces"}>Necklaces</Link>
                           </li>
                           <li>
                             <Link to={"/jewelry/bracelet"}>Bracelet</Link>

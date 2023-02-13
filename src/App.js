@@ -5,18 +5,25 @@ import "./App.scss";
 import IndexPage from "./pages/IndexPage";
 import { Routes, Route } from "react-router-dom";
 import ProductPage from "./pages/productPage";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
 import useFetchData from "./hooks/useFetchData";
 import { myContext } from "./components/context/Context";
 import { useEffect, useState } from "react";
 import CartPage from "./pages/cartPage";
-
+import { getData } from "./redux/Reducer/dataSlice";
 function App() {
-  const [fullProduct] = useFetchData("");
+  //fulldata redux
+  const dispath = useDispatch();
+
+  useEffect(() => {
+    dispath(getData());
+  }, []);
+
+  const dataRedux = useSelector(state => state.data);
+  //end
 
   //add-to cart
-  const dispath = useDispatch();
   const handleAddtoCart = (item, quantity) => {
     if (quantity && item.availabel) {
       dispath(addToCart({ item, quantity }));
@@ -31,7 +38,7 @@ function App() {
   const [detailsProduct, setDetailsProduct] = useState("");
   const [idProductItem, setIdProductItem] = useState("");
   useEffect(() => {
-    const item = fullProduct.find((item) => {
+    const item = dataRedux.data.find((item) => {
       return item.id === idProductItem;
     });
     setDetailsProduct(item);
@@ -54,8 +61,7 @@ function App() {
         setIdProductItem,
         modalProductOpen,
         setModalProductOpen,
-        setDetailsProduct,
-        fullProduct,
+        setDetailsProduct
       }}
     >
       <Routes>

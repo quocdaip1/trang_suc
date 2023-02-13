@@ -13,15 +13,22 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const persistConfig = {
+const persistCart = {
   key: "cart-jew",
   storage,
 };
 
-const cartPersist = persistReducer(persistConfig, cartReducer);
+const persistData = {
+  key: "data-jew",
+  storage,
+};
+
+const cartPersist = persistReducer(persistCart, cartReducer);
+const dataPersist = persistReducer(persistData, dataReducer);
+
 const rootReducer = combineReducers({
   cart: cartPersist,
-  data:dataReducer,
+  data: dataPersist,
 });
 
 const myStore = configureStore({

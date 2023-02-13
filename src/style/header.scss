@@ -202,28 +202,29 @@ header {
                 max-height: 30rem;
                 .cart-item {
                   .content {
-                    .sku{
+                    .sku {
                       display: none;
                     }
                     .quantity-box {
                       .quantity {
                         .text,
-                        .plus,.minus{
+                        .plus,
+                        .minus {
                           display: none;
                         }
                       }
                       .price {
-                        span{
+                        span {
                           display: none;
                         }
                       }
                     }
                   }
-                  button{
+                  button {
                     height: 9rem;
-                    padding: 0 1rem; 
-                    margin-right: .4rem;
-                    &:hover{
+                    padding: 0 1rem;
+                    margin-right: 0.4rem;
+                    &:hover {
                       background: #fcd462;
                     }
                   }
@@ -414,31 +415,61 @@ header {
               height: 100%;
               position: relative;
               padding: 3rem 3rem 7rem;
-              .search-mb {
-                position: relative;
-                input {
-                  height: 3rem;
-                  background: transparent;
-                  border-radius: 0;
-                  border: none;
-                  border-bottom: 0.2rem solid #40403b;
-                  padding-left: 5rem;
-                  color: #fff;
-                  outline: none;
-                  margin-bottom: 1.5rem;
-                }
-                .search-mb-result {
-                  position: absolute;
-                  top: 5;
-                  left: 0;
+              .menu-btn {
+                @include flex-cen-bw;
+                justify-content: flex-start;
+                margin-bottom: 1.6rem;
+                .search-mb {
+                  position: relative;
                   width: 100%;
-                  .mb-result-wraper {
-                    height: calc(100vh - 8rem);
-                    overflow-x: hidden;
-                    overflow-y: auto;
+                  .input-group {
+                    input {
+                      position: relative;
+                      height: 5rem;
+                      width: 5rem;
+                      background: transparent;
+                      border-radius: 0;
+                      border: 0.2rem solid #40403b;
+                      color: #fff;
+                      outline: none;
+                      transition: all 0.5s;
+                      color: transparent;
+                      &:focus {
+                        width: 100%;
+                        padding: 1.6rem;
+                        padding-left: 4rem;
+                        border-color: #fcd462;
+                        outline-color: #fcd462;
+                        color: #fff;
+                        background-position: 1rem 50%;
+                      }
+                      background: url(https://i.postimg.cc/YCgV9bkN/image.png)
+                        no-repeat;
+                      background-size: 2.6rem;
+                      background-position: 45% 50%;
+                    }
+                  }
+                  .search-mb-result {
+                    margin-top: 1.6rem;
+                    position: absolute;
+                    top: 5;
+                    left: 0;
+                    width: 100%;
+                    img {
+                      width: 100%;
+                    }
+                    .mb-result-wraper {
+                      height: calc(100vh - 8rem);
+                      overflow-x: hidden;
+                      overflow-y: auto;
+                      .item{
+                        padding-left: 0;
+                      }
+                    }
                   }
                 }
               }
+
               .menu-list {
                 flex-direction: column;
                 li {
