@@ -1,19 +1,15 @@
-@mixin flex-cen-bw {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+@import '../__global/_config.scss';
 //CSS
 header {
   position: absolute;
   top: 0;
   z-index: 99999;
   width: 100%;
-  color: #fff;
+  color: var(--white);
   background-color: black;
   .top-hd {
     .top-hd-wraper {
-      @include flex-cen-bw;
+      @include flex(center, space-between);
       padding: 0.8rem 2.4rem;
       p {
         margin-bottom: 0;
@@ -35,7 +31,7 @@ header {
       padding: 0 4rem;
       margin: 0 2.4rem;
       position: relative;
-      @include flex-cen-bw;
+      @include flex(center, space-between);
       .hd-logo {
         img {
           width: 12rem;
@@ -43,8 +39,7 @@ header {
       }
       .hd-nav {
         .nav-menu {
-          @include flex-cen-bw;
-          justify-content: unset;
+          @include flex(center, unset);
           .nav-item {
             &:hover {
               .sub-nav-item {
@@ -69,7 +64,7 @@ header {
                 border-right: 0.1rem solid rgb(117 117 117 / 70%);
                 .tab-item {
                   text-transform: capitalize;
-                  color: #a3a3a3;
+                  color: var(--gray-1);
                   font-weight: 500;
                   font-size: 1.6rem;
                   padding: 1rem 0;
@@ -82,12 +77,12 @@ header {
                     position: absolute;
                     right: 0;
                     top: 0;
-                    background-color: #fcd462;
+                    background-color: var(--primary-color);
                     visibility: hidden;
                     transition: all 0.3s;
                   }
                   &.active {
-                    color: #fcd462;
+                    color: var(--primary-color);
                     &::after {
                       visibility: visible;
                       height: 100%;
@@ -124,14 +119,14 @@ header {
       }
       .hd-menu {
         .menu-list {
-          @include flex-cen-bw;
+          @include flex(center, space-between);
           .menu-item {
             margin-left: 1.6rem;
             &:hover {
               .menu-item-link {
                 .notify {
-                  background: #fff;
-                  color: #000;
+                  background: var(--white);
+                  color: var(--black);
                 }
               }
             }
@@ -142,13 +137,13 @@ header {
               text-align: center;
               line-height: 6.5rem;
               padding: 0;
-              color: #fff;
+              color: var(--white);
               font-size: 2.4rem;
               position: relative;
               z-index: 9999;
               .notify {
-                background: #fcd462;
-                color: #000;
+                background: var(--primary-color);
+                color: var(--black);
                 width: 1.6rem;
                 height: 1.6rem;
                 display: inline-flex;
@@ -164,9 +159,9 @@ header {
           }
           .cart {
             &:hover {
-              background: #fcd462;
+              background: var(--primary-color);
               a {
-                color: #fff !important;
+                color: var(--white) !important;
               }
               .cart-dropw-down {
                 display: block;
@@ -225,17 +220,17 @@ header {
                     padding: 0 1rem;
                     margin-right: 0.4rem;
                     &:hover {
-                      background: #fcd462;
+                      background: var(--primary-color);
                     }
                   }
                 }
               }
               .sub-total {
                 margin: 1.6rem 0;
-                @include flex-cen-bw;
+                @include flex(center, space-between);
                 span {
                   font-size: 1.8rem;
-                  color: #fcd462;
+                  color: var(--primary-color);
                 }
               }
             }
@@ -267,7 +262,7 @@ header {
                 line-height: 9rem;
                 border: none;
                 outline: none;
-                color: #fff;
+                color: var(--white);
                 border-bottom: 1px solid #edededff;
                 background: #353530;
               }
@@ -280,11 +275,11 @@ header {
                 z-index: 999999;
                 i {
                   font-size: 4rem;
-                  color: #fff;
+                  color: var(--white);
                 }
                 &:hover {
                   i {
-                    color: #fcd462;
+                    color: var(--primary-color);
                   }
                 }
               }
@@ -307,7 +302,7 @@ header {
                     padding: 0.4rem 1.6rem;
                     border-radius: 2rem;
                     &:hover {
-                      background: #fcd462;
+                      background: var(--primary-color);
                       color: white;
                     }
                   }
@@ -358,7 +353,7 @@ header {
                       content: "";
                       width: 100%;
                       height: 1px;
-                      background-color: #fff;
+                      background-color: var(--white);
                     }
                     &::before {
                       position: absolute;
@@ -367,7 +362,7 @@ header {
                       top: 50%;
                       right: 105%;
                       height: 1px;
-                      background-color: #fff;
+                      background-color: var(--white);
                     }
                   }
                 }
@@ -416,8 +411,7 @@ header {
               position: relative;
               padding: 3rem 3rem 7rem;
               .menu-btn {
-                @include flex-cen-bw;
-                justify-content: flex-start;
+                @include flex(center, flex-start);
                 margin-bottom: 1.6rem;
                 .search-mb {
                   position: relative;
@@ -430,7 +424,7 @@ header {
                       background: transparent;
                       border-radius: 0;
                       border: 0.2rem solid #40403b;
-                      color: #fff;
+                      color: var(--white);
                       outline: none;
                       transition: all 0.5s;
                       color: transparent;
@@ -438,9 +432,9 @@ header {
                         width: 100%;
                         padding: 1.6rem;
                         padding-left: 4rem;
-                        border-color: #fcd462;
-                        outline-color: #fcd462;
-                        color: #fff;
+                        border-color: var(--primary-color);
+                        outline-color: var(--primary-color);
+                        color: var(--white);
                         background-position: 1rem 50%;
                       }
                       background: url(https://i.postimg.cc/YCgV9bkN/image.png)
@@ -507,9 +501,9 @@ header {
                       width: 100%;
                     }
                     &:hover {
-                      background: #fcd462;
+                      background: var(--primary-color);
                       a {
-                        color: #fff !important;
+                        color: var(--white) !important;
                       }
                     }
                   }

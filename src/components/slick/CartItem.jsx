@@ -4,7 +4,7 @@ import {
   deleteFromCart,
   removeFromCart,
 } from "../../redux/Reducer/cartSlice";
-import "../../style/cartItem.scss";
+import "../../style/components/cartItem.scss";
 const CartItem = (props) => {
   const { item } = props;
   const cartRedux = useSelector((state) => state.cart);
@@ -24,7 +24,7 @@ const CartItem = (props) => {
   return (
     <li className="cart-item">
       <div className="img">
-        <img src={item.image} alt="" />
+        <img loading="lazy" src={item.image} alt="" />
       </div>
       <div className="content">
         <p className="name ellipsis">

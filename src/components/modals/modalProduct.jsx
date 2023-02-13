@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { componentUnmount } from "../../service/utils";
-import "../../style/modal.scss";
+import "../../style//components/modal.scss";
 import { myContext } from "../context/Context";
 
 const ModalProduct = (props) => {
@@ -28,7 +28,7 @@ const ModalProduct = (props) => {
                 <div className="row">
                   <div className="col col-lg-5 col-md-10 col-12">
                     <div className="detail-img bg-black">
-                      <img src={item.image} alt="" />
+                      <img loading="lazy" src={item.image} alt="" />
                     </div>
                   </div>
                   <div className="col col-lg-7 col-md-10 col-12">

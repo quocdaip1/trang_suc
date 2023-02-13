@@ -1,4 +1,4 @@
-import "../../style/footer.scss";
+import "../../style/components/footer.scss";
 import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return (
@@ -15,6 +15,7 @@ const Footer = () => {
                   <div className="back-to-top">
                     <a href="#main" className="back-inner">
                       <img
+                        loading="lazy"
                         src="https://i.postimg.cc/gcTvv8RY/7740643.gif"
                         alt=""
                       />
@@ -26,6 +27,7 @@ const Footer = () => {
                       <div className="ft-logo">
                         <Link to={"/"} data-aos="zoom-in">
                           <img
+                            loading="lazy"
                             src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
                             alt=""
                           />
@@ -110,7 +112,11 @@ const Footer = () => {
               <div className=" pd-0 col-lg-4">
                 <div data-aos=" zoom-in-up" className="ft-top-right">
                   <div className="map">
-                    <img src="https://i.postimg.cc/tT0Q5sNn/z4086.jpg" alt="" />
+                    <img
+                      loading="lazy"
+                      src="https://i.postimg.cc/tT0Q5sNn/z4086.jpg"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>

@@ -38,8 +38,8 @@
           font-weight: 500;
           padding: 0.2rem 1.5rem;
           font-size: 1.6rem;
-          background-color: #fcd462;
-          color: #fff;
+          background-color: var(--primary-color);
+          color: var(--white);
           display: none;
           align-items: center;
           justify-content: center;
@@ -48,7 +48,7 @@
           }
         }
         .discount {
-          background: #fff;
+          background: var(--white);
           color: #353530;
         }
       }
@@ -59,11 +59,12 @@
         opacity: 0;
         visibility: hidden;
         li {
+          cursor: pointer;
           transform: scale(0.6);
           transition: all 0.3s linear;
           &:hover {
-            color: #fff;
-            background-color: #fcd462;
+            color: var(--white);
+            background-color: var(--primary-color);
           }
           width: 4rem;
           height: 4rem;
@@ -73,7 +74,7 @@
           border-radius: 0;
           margin-bottom: 1rem;
           background-color: #353530;
-          color: #fcd462;
+          color: var(--primary-color);
           i {
             font-size: 1.4rem;
           }

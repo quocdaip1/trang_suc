@@ -1,8 +1,5 @@
-@mixin flex-cen-bw {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+@import "../__global/_config.scss";
+
 #cart-page {
   #main {
     .title {
@@ -12,7 +9,7 @@
         text-transform: uppercase;
         letter-spacing: 0.3rem;
         padding-bottom: 3rem;
-        color: #a3a3a3;
+        color: var(--gray-1);
         display: inline-block;
       }
     }
@@ -20,13 +17,13 @@
     .cart-wraper {
       padding: 25rem 0 8.5rem 0;
       .cart-header {
-        @include flex-cen-bw;
+        @include flex(center, space-between);
         .sub-total {
           font-size: 1.8rem;
           text-transform: capitalize;
           span {
             padding-left: 0.8rem;
-            color: #fcd462;
+            color: var(--primary-color);
           }
         }
       }
@@ -50,7 +47,7 @@
                   text-transform: capitalize;
                   color: #28a745;
                   span {
-                    color: #fff;
+                    color: var(--white);
                   }
                 }
                 .quantity-box {
@@ -60,7 +57,7 @@
                     display: block;
                     text-transform: capitalize;
                     span {
-                      color: #fff;
+                      color: var(--white);
                     }
                   }
                   .multi {
@@ -86,7 +83,7 @@
               .delete {
                 min-height: 15rem;
                 &:hover {
-                  background: #fcd462;
+                  background: var(--primary-color);
                 }
               }
             }
@@ -110,9 +107,9 @@
                 height: 4rem;
                 padding: 0.4rem 1.6rem;
                 border: 0.1rem solid #a8a8a8;
-                background: #fff;
+                background: var(--white);
                 background: transparent;
-                color: #fff;
+                color: var(--white);
               }
               .form-row {
                 display: flex;
@@ -134,7 +131,7 @@
                   }
                 }
               }
-  
+
               .ant-form-item {
                 margin: 0.8rem 0 !important;
               }
@@ -154,7 +151,7 @@
               .sub-total,
               .total,
               .deliver {
-                @include flex-cen-bw;
+                @include flex(center, space-between);
               }
               .total {
                 span {
@@ -167,7 +164,7 @@
           }
           .payment-wraper {
             margin: 2.4rem 0;
-            @include flex-cen-bw;
+            @include flex(center, space-between);
             .payment-item {
               width: 49%;
               border: 0.05rem solid #40403b;
@@ -192,9 +189,9 @@
           }
         }
       }
-      .cart-empty{
+      .cart-empty {
         text-align: center;
-        img{
+        img {
           object-fit: cover;
           width: 100%;
         }

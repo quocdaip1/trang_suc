@@ -1,8 +1,4 @@
-@mixin flex-cen-bw {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+@import "../__global/_config.scss";
 
 footer {
   overflow: hidden;
@@ -36,16 +32,16 @@ footer {
         margin: 0 4rem;
         font-weight: 700;
         text-transform: uppercase;
-        img{
+        img {
           width: 4rem;
-          margin-right: .6rem;
+          margin-right: 0.6rem;
           border-radius: 50%;
         }
         .back-inner {
           display: inline-block;
           cursor: pointer;
           &:hover {
-            color: #fcd462;
+            color: var(--primary-color);
           }
           i {
             margin-right: 10px;
@@ -53,7 +49,7 @@ footer {
             height: 4rem;
             width: 4rem;
             line-height: 4rem;
-            background-color: #fcd462;
+            background-color: var(--primary-color);
             border-radius: 50%;
           }
         }
@@ -62,7 +58,7 @@ footer {
         padding: 4rem 4rem 2.5rem;
         height: 100%;
         .ft-box-top {
-          @include flex-cen-bw;
+          @include flex(center, space-between);
           margin-bottom: 4rem;
           .ft-logo {
             img {
@@ -71,13 +67,12 @@ footer {
           }
           .ft-social {
             ul {
-              @include flex-cen-bw;
+              @include flex(center, space-between);
               li {
-                color: #fff;
+                color: var(--white);
                 margin-left: 0.6rem;
                 a {
-                  @include flex-cen-bw;
-                  justify-content: center;
+                  @include flex(center, center);
                   width: 4rem;
                   height: 4rem;
                   background-color: #2e2e2e;
@@ -88,8 +83,7 @@ footer {
         }
         .ft-nav {
           ul {
-            @include flex-cen-bw;
-            justify-content: unset;
+            @include flex(center, space-between);
             li {
               margin-right: 1.8rem;
               margin-bottom: 2.5rem;
@@ -123,10 +117,9 @@ footer {
         margin-bottom: 1.6rem;
         li {
           margin-right: 4rem;
-          @include flex-cen-bw;
-          justify-content: unset;
+          @include flex(center, space-between);
           i {
-            color: #fcd462;
+            color: var(--primary-color);
             text-align: center;
             vertical-align: middle;
             font-size: 4rem;
@@ -152,8 +145,7 @@ footer {
         top: 0;
         width: 5rem;
         height: 5rem;
-        @include flex-cen-bw;
-        justify-content: center;
+        @include flex(center, center);
         i {
         }
       }
@@ -165,14 +157,12 @@ footer {
         border: none;
         border-bottom: 0.2rem solid #40403b;
         padding-left: 5rem;
-        color: #fff;
+        color: var(--white);
         outline: none;
       }
     }
     .ft-address {
-      display: flex;
-      align-items: center;
-      justify-content: end;
+      @include flex(center, end);
       .text {
         margin-right: 1.6rem;
         p {
@@ -182,15 +172,14 @@ footer {
       .icon {
         i {
           font-size: 4rem;
-          color: #fcd462;
+          color: var(--primary-color);
         }
       }
     }
   }
 
   .ft-bottom {
-    @include flex-cen-bw;
-    justify-content: center;
+    @include flex(center, center);
     border-top: 0.05rem solid #40403b;
     padding: 2.4rem 0;
     .coppy-right {
@@ -200,7 +189,7 @@ footer {
       }
       span {
         margin-left: 0.4rem;
-        color: #fcd462;
+        color: var(--primary-color);
       }
     }
   }
@@ -223,8 +212,7 @@ footer {
         .ft-box {
           padding: 3rem 4rem 1.5rem;
           .ft-nav {
-            @include flex-cen-bw;
-            justify-content: center;
+            @include flex(center, center);
           }
         }
       }
@@ -236,8 +224,7 @@ footer {
     }
     .ft-center {
       .ft-contact {
-        @include flex-cen-bw;
-        justify-content: center;
+        @include flex(center, center);
         ul {
           li {
             margin-right: 1rem;

@@ -1,15 +1,10 @@
-@mixin flex-cen-bw {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
+@import "../__global/_config.scss";
+
 .cart-item {
   border-bottom: 0.1rem solid #40403b;
   padding-bottom: 1.6rem;
   margin-bottom: 1.6rem;
-  @include flex-cen-bw;
-  justify-content: unset;
+  @include flex(center, unset);
   .img {
     width: 8rem;
     height: 8rem;
@@ -25,15 +20,14 @@
       margin-right: 0.4rem;
     }
     .quantity-box {
-      @include flex-cen-bw;
-      justify-content: unset;
+      @include flex(center, unset);
       font-family: "Roboto";
       .quantity {
         margin-right: 0.2rem;
       }
       .price {
         margin-left: 0.2rem;
-        color: #fcd462;
+        color: var(--primary-color);
       }
     }
   }

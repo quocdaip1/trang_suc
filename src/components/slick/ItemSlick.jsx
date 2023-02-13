@@ -11,7 +11,7 @@ const ItemSlick = (props) => {
     <div onClick={() => setIdProductItem(item.id)} className="item">
       <div className="item-wraper ">
         <div className="thumb imagesiny">
-          <img src={item.image} alt="" />
+          <img loading="lazy" src={item.image} alt="" />
           <div className="sale">
             <span className={`mb-3 ${item.onsale ? "active" : ""}`}>sale</span>
             <span className={`discount ${item.onsale ? "active" : ""}`}>

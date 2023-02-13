@@ -1,4 +1,4 @@
-import "../../style/header.scss";
+import "../../style/components/header.scss";
 import { useSelector } from "react-redux";
 import uuid from "react-uuid";
 import { useContext, useEffect, useState } from "react";
@@ -154,7 +154,7 @@ export default function () {
             {/* header logo */}
             <div className="hd-logo" data-aos="zoom-in" data-aos-duration="800">
               <Link to={"/"}>
-                <img
+                <img loading="lazy"
                   src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
                   alt=""
                 />
@@ -186,7 +186,7 @@ export default function () {
                                     tab === item ? "active" : ""
                                   }`}
                                 >
-                                  <img src={imgNav[item]} alt="" />
+                                  <img loading="lazy" src={imgNav[item]} alt="" />
                                   {item}
                                 </li>
                               );
@@ -226,7 +226,7 @@ export default function () {
                                     </div>
                                     <div className="col-6">
                                       <div className="img">
-                                        <img src={imgContent[item]} alt="" />
+                                        <img loading="lazy" src={imgContent[item]} alt="" />
                                       </div>
                                     </div>
                                   </div>
@@ -351,7 +351,7 @@ export default function () {
                           <Loading />
                         </div>
                       ) : listSearch.length === 0 ? (
-                        <img src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
+                        <img loading="lazy" src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
                       ) : (
                         <div className="result-wraper">
                           {listSearch.map((item) => {
@@ -387,7 +387,7 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img
+                        <img loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
                         />
@@ -429,7 +429,7 @@ export default function () {
             {/* logo mobile */}
             <div className="hd-logo">
               <a href="/">
-                <img
+                <img loading="lazy"
                   src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
                   alt=""
                 />
@@ -467,7 +467,7 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img
+                        <img loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
                         />
@@ -479,7 +479,7 @@ export default function () {
                             return (
                               <li key={uuid()} className="cart-item">
                                 <div className="img">
-                                  <img src={item.image} alt="" />
+                                  <img loading="lazy" src={item.image} alt="" />
                                 </div>
                                 <div className="content">
                                   <p className="name ellipsis">
@@ -565,7 +565,7 @@ export default function () {
                                 <Loading />
                               </div>
                             ) : listSearch.length === 0 ? (
-                              <img src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
+                              <img loading="lazy" src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
                             ) : (
                               <div className="mb-result-wraper scroll-custom">
                                 <div className="row">

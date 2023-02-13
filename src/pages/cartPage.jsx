@@ -6,7 +6,7 @@ import Header from "../components/header/Header";
 import ModalLogin from "../components/modals/modalLogin";
 import ModalProduct from "../components/modals/modalProduct";
 import CartItem from "../components/slick/CartItem";
-import "../style/cartPage.scss";
+import "../style/pages/cartPage.scss";
 import { DatePicker, Form } from "antd";
 import { useState } from "react";
 
@@ -198,7 +198,7 @@ const CartPage = () => {
               </div>
             ) : (
               <div className="cart-empty">
-                <img
+                <img loading="lazy"
                   src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                   alt=""
                 />

@@ -3,7 +3,7 @@ const NewsSlick = (props) => {
     return (
         <div className="news-item">
             <div className="news-img">
-                <img src={item.link} alt="" />
+                <img loading="lazy" src={item.link} alt="" />
             </div>
 
             <div className="news-info">

@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import "../../style/slick.scss";
+import "../../style/components/slick.scss";
 
 const Slick = (props) => {
   const { show, row,custom, children } = props;

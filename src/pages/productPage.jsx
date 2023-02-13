@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import uuid from "react-uuid";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
 import ModalLogin from "../components/modals/modalLogin";
 import ModalProduct from "../components/modals/modalProduct";
 import ItemSlick from "../components/slick/ItemSlick";
-import "../style/productPage.scss";
+import "../style/pages/productPage.scss"
 import usePagination from "../hooks/usePagination";
 import Pagination from "@mui/material/Pagination";
 import myAxios from "../service/axios";
@@ -15,7 +14,6 @@ import RangeSlider from "../components/rangeSlide/RangeSlide";
 import Loading from "../components/loading/Loading";
 
 const ProductPage = () => {
-  /* const dataRedux = useSelector((state) => state.data); */
   const [fullProduct, setFullproduct] = useState([]);
   const params = useParams();
   const [keyParams, setkeyParams] = useState(
@@ -82,8 +80,8 @@ const ProductPage = () => {
                       </div>
                       <div className="filter-item category bg-35">
                         <div className="title">
-                          <h2 data-text="&nbsp;filter by category">
-                            &nbsp;filter by category &nbsp;
+                          <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;category&nbsp;&nbsp;">
+                            &nbsp;&nbsp;filter&nbsp;by&nbsp;category&nbsp;&nbsp;
                           </h2>
                           <div
                             onClick={() => handleActFilter("cate")}
@@ -126,8 +124,8 @@ const ProductPage = () => {
 
                       <div className="filter-item bg-35">
                         <div className="title">
-                          <h2 data-text="&nbsp;filter by price">
-                            &nbsp;filter by price &nbsp;
+                          <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;price &nbsp;">
+                            &nbsp;&nbsp;filter&nbsp;by&nbsp;price &nbsp;
                           </h2>
                           <div
                             onClick={() => handleActFilter("range")}
@@ -149,8 +147,8 @@ const ProductPage = () => {
 
                       <div className="filter-item bg-35">
                         <div className="title">
-                          <h2 data-text="&nbsp;filter by material">
-                            &nbsp;filter by material&nbsp;
+                          <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;material&nbsp;&nbsp;">
+                            &nbsp;&nbsp;filter&nbsp;by&nbsp;material&nbsp;&nbsp;
                           </h2>
                           <div
                             onClick={() => handleActFilter("mate")}
@@ -209,8 +207,8 @@ const ProductPage = () => {
 
                       <div className="filter-item bg-35">
                         <div className="title">
-                          <h2 data-text="&nbsp;filter by purify of gold">
-                            &nbsp;filter by purify of gold&nbsp;
+                          <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;purify&nbsp;of&nbsp;gold&nbsp;&nbsp;">
+                            &nbsp;&nbsp;filter&nbsp;by&nbsp;purify&nbsp;of&nbsp;gold&nbsp;&nbsp;
                           </h2>
                           <div
                             onClick={() => handleActFilter("puri")}
@@ -253,8 +251,8 @@ const ProductPage = () => {
 
                       <div className="filter-item bg-35">
                         <div className="title">
-                          <h2 data-text="&nbsp;popular tags">
-                            &nbsp;popular tags&nbsp;
+                          <h2 data-text="&nbsp;&nbsp;popular&nbsp;tags&nbsp;&nbsp;">
+                            &nbsp;&nbsp;popular&nbsp;tags&nbsp;&nbsp;
                           </h2>
                           <div
                             onClick={() => handleActFilter("tag")}

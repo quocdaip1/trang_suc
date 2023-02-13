@@ -18,7 +18,7 @@
           margin-bottom: 0.6rem;
           .MuiButtonBase-root,
           .MuiPaginationItem-text {
-            color: #fff !important;
+            color: var(--white) !important;
             width: 5rem;
             height: 5rem;
             border-radius: 0;
@@ -26,7 +26,7 @@
             line-height: 5rem;
             font-size: 1.4rem;
             &.Mui-selected {
-              background: #fcd462;
+              background: var(--primary-color);
             }
             &:hover {
               background: rgba(252, 212, 98, 0.8);
@@ -52,13 +52,10 @@
         &:hover {
           .title {
             h2 {
-              -webkit-text-stroke: 0;
-              color: #fcd462;
-              // &::before {
-              //   width: 100%;
-              //   left: 3rem;
-              //   filter: drop-shadow(0 0 2.5rem #fcd462);
-              // }
+              &::before {
+                width: 100%;
+                filter: drop-shadow(0 0 2rem var(--primary-color));
+              }
             }
           }
         }
@@ -71,25 +68,24 @@
             line-height: 2rem;
             letter-spacing: 0.3rem;
             margin-bottom: 3rem;
-            color: #a3a3a3;
+            color: var(--gray-1);
             display: inline-block;
             font-size: 1.4rem;
-            padding-left: 3rem;
-            border-left: 0.2rem solid #fcd462;
-            // position: relative;
-            // color: transparent;
-            // -webkit-text-stroke: 0.1rem rgba(255, 255, 255, 0.5);
-            // &::before {
-            //   content: attr(data-text);
-            //   position: absolute;
-            //   color: #fcd462;
-            //   width: 0;
-            //   left: 0;
-            //   overflow: hidden;
-            //   transition: 1s;
-            //   border-right: 0.8rem solid #fcd462;
-            //   -webkit-text-stroke: 0.1rem #fcd462;
-            // }
+            position: relative;
+            color: transparent;
+            -webkit-text-stroke: 0.1rem rgba(255, 255, 255, 0.5);
+            &::before {
+              content: attr(data-text);
+              position: absolute;
+              color: var(--primary-color);
+              height: 100%;
+              width: 0;
+              left: 0;
+              overflow: hidden;
+              transition: 1s;
+              border-right: 0.6rem solid var(--primary-color);
+              -webkit-text-stroke: 0.1rem var(--primary-color);
+            }
           }
           i {
             margin-left: 0.8rem;
@@ -109,8 +105,8 @@
               input[type="checkbox"] {
                 display: none;
                 &:checked ~ .custom-checkbox {
-                  border: 0.1rem solid #fcd462;
-                  background-color: #fcd462;
+                  border: 0.1rem solid var(--primary-color);
+                  background-color: var(--primary-color);
                   &::after {
                     display: block;
                   }
@@ -130,7 +126,7 @@
                   top: 0.4rem;
                   width: 0.5rem;
                   height: 1rem;
-                  border: 1px solid #fff;
+                  border: 1px solid var(--white);
                   border-width: 0 0.2rem 0.2rem 0;
                   transform: rotate(45deg);
                   content: "";
@@ -147,7 +143,7 @@
               margin-bottom: 1rem;
               a {
                 font-size: 1.2rem;
-                color: #fff;
+                color: var(--white);
                 padding: 1rem 1.5rem;
                 background-color: #272626;
               }
@@ -156,7 +152,7 @@
           .MuiBox-root {
             .text {
               .value {
-                color: #fcd462;
+                color: var(--primary-color);
                 font-size: 1.6rem;
                 margin: 0 0.6rem;
               }
@@ -170,7 +166,7 @@
         p {
           text-transform: capitalize;
           span {
-            color: #fcd462;
+            color: var(--primary-color);
             padding: 0 0.6rem;
             font-size: 1.6rem;
             font-weight: 500;
@@ -212,7 +208,7 @@
               }
               &:hover {
                 i {
-                  color: #fcd462;
+                  color: var(--primary-color);
                 }
               }
               i {

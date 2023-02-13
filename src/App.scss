@@ -4,23 +4,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #fcd462;
+  --white: #fff;
+  --black: #000;
+  --gray-1: #a3a3a3;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
   font-family: "Prata", serif !important;
-  
 }
 
 body {
   font-size: 14px;
   line-height: 1.4;
-  color: #fff !important;
+  color: var(--white) !important;
   font-family: "Prata", serif;
   &::-webkit-scrollbar {
     width: 1rem;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #fcd462;
+    background-color: var(--primary-color);
   }
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -33,7 +39,7 @@ body {
     width: 0.6rem;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #fcd462;
+    background-color: var(--primary-color);
   }
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -47,23 +53,23 @@ body {
 }
 
 ::placeholder {
-  color: #fff;
+  color: var(--white);
 }
 
 a {
   display: inline-block;
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
 a:hover {
-  color: #fcd462 !important;
+  color: var(--primary-color) !important;
 }
 
 .bg-yellow:hover > a {
-  background: #fcd462 !important;
-  color: #fff !important;
+  background: var(--primary-color) !important;
+  color: var(--white) !important;
 }
 
 ul {
@@ -75,7 +81,7 @@ ul {
 .rs-btn {
   border: none;
   padding: 0 2rem;
-  color: #fff;
+  color: var(--white);
   background: transparent;
 }
 
@@ -101,19 +107,19 @@ ul {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  color: #a3a3a3;
-  border: 0.2rem solid #fcd462;
+  color: var(--gray-1);
+  border: 0.2rem solid var(--primary-color);
   overflow: hidden;
   font-family: "Rubik", sans-serif !important;
 }
 
 .main-btn > span {
   position: relative;
-  color: #fcd462;
+  color: var(--primary-color);
 }
 
 .main-btn::before {
-  background-color: #fcd462;
+  background-color: var(--primary-color);
   content: "";
   height: 100%;
   left: 0;
@@ -126,7 +132,7 @@ ul {
 }
 
 .main-btn:hover > span {
-  color: #fff;
+  color: var(--white);
 }
 
 .main-btn:hover:before {
@@ -174,7 +180,7 @@ ul {
     content: "";
     width: 100%;
     height: 0.2rem;
-    background: #fcd462;
+    background: var(--primary-color);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -193,7 +199,7 @@ ul {
   display: block;
   .new-price {
     font-size: 1.8rem;
-    color: #fcd462;
+    color: var(--primary-color);
   }
   .old-price {
     text-decoration: line-through;

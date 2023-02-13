@@ -50,6 +50,12 @@ function App() {
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
   //end
 
+  //dom
+  window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+});
+  //end
+
   return (
     <myContext.Provider
       value={{
