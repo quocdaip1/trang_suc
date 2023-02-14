@@ -12,6 +12,7 @@ import ModalLogin from "../components/modals/modalLogin";
 import { componentDidMount, componentUnmount } from "../service/utils";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CountUp from "react-countup";
 
 const IndexPage = (props) => {
   const dataRedux = useSelector((state) => state.data);
@@ -209,7 +210,8 @@ const IndexPage = (props) => {
                   <div className="col-wraper">
                     <Link to={"/jewelry/bracelet"}>
                       <div className="img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/hGCy9NMv/9056425.gif"
                           alt=""
                         />
@@ -217,7 +219,8 @@ const IndexPage = (props) => {
                       <h5 className="title">Bracelet</h5>
                       <p>10 Products</p>
                       <span className="overlay-img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/W3c1CxGD/2845355.png"
                           alt=""
                         />
@@ -229,7 +232,8 @@ const IndexPage = (props) => {
                   <div className="col-wraper">
                     <Link to={"/jewelry/diamond ring"}>
                       <div className="img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/KYL7YVVC/8722086.gif"
                           alt=""
                         />
@@ -237,7 +241,8 @@ const IndexPage = (props) => {
                       <h5 className="title">Diamond Rings</h5>
                       <p>10 Products</p>
                       <span className="overlay-img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/x8YqJBqr/508709.png"
                           alt=""
                         />
@@ -249,7 +254,8 @@ const IndexPage = (props) => {
                   <div className="col-wraper">
                     <Link to={"/jewelry/necklace"}>
                       <div className="img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/YCVK7GKb/9056449.gif"
                           alt=""
                         />
@@ -257,7 +263,8 @@ const IndexPage = (props) => {
                       <h5 className="title">Gold Necklaces</h5>
                       <p>10 Products</p>
                       <span className="overlay-img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/c1Mvy15d/775385.png"
                           alt=""
                         />
@@ -269,7 +276,8 @@ const IndexPage = (props) => {
                   <div className="col-wraper">
                     <Link to={"/jewelry/earring"}>
                       <div className="img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/02QBNkC3/9056432.gif"
                           alt=""
                         />
@@ -277,7 +285,8 @@ const IndexPage = (props) => {
                       <h5 className="title">Design Earrings</h5>
                       <p>10 Products</p>
                       <span className="overlay-img">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/d3B38nTh/3985821.png"
                           alt=""
                         />
@@ -306,7 +315,8 @@ const IndexPage = (props) => {
                         data-aos-duration="600"
                       >
                         <div className="img">
-                          <img loading="lazy"
+                          <img
+                            loading="lazy"
                             src="https://i.postimg.cc/KYL7YVVC/8722086.gif"
                             alt=""
                           />
@@ -327,7 +337,8 @@ const IndexPage = (props) => {
                         data-aos-easing="linear"
                         data-aos-duration="600"
                       >
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/4dBjxn9K/04.jpg"
                           alt=""
                         />
@@ -341,7 +352,8 @@ const IndexPage = (props) => {
                         data-aos-easing="linear"
                         data-aos-duration="600"
                       >
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/HWvfGcmR/download.jpg"
                           alt=""
                         />
@@ -355,7 +367,8 @@ const IndexPage = (props) => {
                         data-aos-duration="600"
                       >
                         <div className="img">
-                          <img loading="lazy"
+                          <img
+                            loading="lazy"
                             src="https://i.postimg.cc/YCVK7GKb/9056449.gif"
                             alt=""
                           />
@@ -410,7 +423,11 @@ const IndexPage = (props) => {
           </div>
           <div className="about-bg">
             <div className="bg-img">
-              <img loading="lazy" src="https://i.postimg.cc/nzqvV3cR/download.jpg" alt="" />
+              <img
+                loading="lazy"
+                src="https://i.postimg.cc/nzqvV3cR/download.jpg"
+                alt=""
+              />
             </div>
           </div>
         </section>
@@ -423,7 +440,8 @@ const IndexPage = (props) => {
           data-aos-easing="linear"
           data-aos-duration="600"
         >
-          <img loading="lazy"
+          <img
+            loading="lazy"
             className="sell-sub-img"
             src="https://i.postimg.cc/y6tvCmw2/download.png"
             alt=""
@@ -488,7 +506,8 @@ const IndexPage = (props) => {
         <section className="services bg-35">
           <div className="container">
             <div className="services-title title title-section">
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="600"
@@ -520,7 +539,8 @@ const IndexPage = (props) => {
                   >
                     <div className="item-img imagesiny">
                       <a href="#">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/pd8tKfgj/download.png"
                           alt=""
                         />
@@ -528,7 +548,8 @@ const IndexPage = (props) => {
                     </div>
                     <div className="item-inner bg-dark">
                       <div className="icon">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/d3B38nTh/3985821.png"
                           alt=""
                         />
@@ -552,12 +573,17 @@ const IndexPage = (props) => {
                   >
                     <div className="item-img imagesiny">
                       <a href="#">
-                        <img loading="lazy" src="https://i.postimg.cc/D0CV7Bb9/2.png" alt="" />
+                        <img
+                          loading="lazy"
+                          src="https://i.postimg.cc/D0CV7Bb9/2.png"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="item-inner bg-dark">
                       <div className="icon">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/x8YqJBqr/508709.png"
                           alt=""
                         />
@@ -581,12 +607,17 @@ const IndexPage = (props) => {
                   >
                     <div className="item-img imagesiny">
                       <a href="#">
-                        <img loading="lazy" src="https://i.postimg.cc/brwMVkF3/3.png" alt="" />
+                        <img
+                          loading="lazy"
+                          src="https://i.postimg.cc/brwMVkF3/3.png"
+                          alt=""
+                        />
                       </a>
                     </div>
                     <div className="item-inner bg-dark">
                       <div className="icon">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/c1Mvy15d/775385.png"
                           alt=""
                         />
@@ -615,13 +646,16 @@ const IndexPage = (props) => {
               <div className="col col-lg-3 col-6">
                 <div className="count-item">
                   <div className="count-icon">
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       src="https://i.postimg.cc/qq5drjPN/4176420.png"
                       alt=""
                     />
                   </div>
                   <div className="count-title title">
-                    <h2>84K</h2>
+                    <h2>
+                      <CountUp start={0} end={80} duration={2} enableScrollSpy={true} />K
+                    </h2>
                     <span>Jewelries in Album</span>
                   </div>
                 </div>
@@ -629,13 +663,17 @@ const IndexPage = (props) => {
               <div className="col col-lg-3 col-6">
                 <div className="count-item">
                   <div className="count-icon">
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       src="https://i.postimg.cc/QN23fnJz/456115.png"
                       alt=""
                     />
                   </div>
                   <div className="count-title title">
-                    <h2>10M</h2>
+                    <h2>
+                      {" "}
+                      <CountUp start={0} end={10} duration={2} enableScrollSpy={true} />M
+                    </h2>
                     <span>Happy Feedbacks</span>
                   </div>
                 </div>
@@ -643,13 +681,17 @@ const IndexPage = (props) => {
               <div className="col col-lg-3 col-6">
                 <div className="count-item">
                   <div className="count-icon">
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       src="https://i.postimg.cc/tJyzTbHf/8081823.png"
                       alt=""
                     />
                   </div>
                   <div className="count-title title">
-                    <h2>2K</h2>
+                    <h2>
+                      {" "}
+                      <CountUp start={0} end={7} duration={2} enableScrollSpy={true} />K
+                    </h2>
                     <span>Categories Served</span>
                   </div>
                 </div>
@@ -657,13 +699,17 @@ const IndexPage = (props) => {
               <div className="col col-lg-3 col-6">
                 <div className="count-item">
                   <div className="count-icon">
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       src="https://i.postimg.cc/x8zS0Kng/1533506.png"
                       alt=""
                     />
                   </div>
                   <div className="count-title title">
-                    <h2>100M</h2>
+                    <h2>
+                      {" "}
+                      <CountUp start={0} end={100} duration={2} enableScrollSpy={true} />M
+                    </h2>
                     <span>Client</span>
                   </div>
                 </div>
@@ -677,7 +723,8 @@ const IndexPage = (props) => {
         <section className="on-sale bg-35">
           <div className="container">
             <div className="on-sale-title title title-section">
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="600"
@@ -703,7 +750,8 @@ const IndexPage = (props) => {
               <div className="row">
                 <div className="col col-lg-6 col-12">
                   <div className="col-left-wraper col-wraper imagesiny">
-                    <img loading="lazy"
+                    <img
+                      loading="lazy"
                       data-aos="fade-right"
                       data-aos-easing="linear"
                       data-aos-duration="600"
@@ -741,7 +789,8 @@ const IndexPage = (props) => {
                           data-aos-easing="linear"
                           data-aos-duration="600"
                         >
-                          <img loading="lazy"
+                          <img
+                            loading="lazy"
                             className="small-img"
                             src="https://i.postimg.cc/bvkCGv4Y/download.jpg"
                             alt=""
@@ -765,7 +814,8 @@ const IndexPage = (props) => {
                           data-aos-easing="linear"
                           data-aos-duration="600"
                         >
-                          <img loading="lazy"
+                          <img
+                            loading="lazy"
                             className="small-img"
                             src="https://i.postimg.cc/28g74DQ1/download.jpg"
                             alt=""
@@ -852,7 +902,8 @@ const IndexPage = (props) => {
                   data-aos-easing="linear"
                   data-aos-duration="600"
                 >
-                  <img loading="lazy"
+                  <img
+                    loading="lazy"
                     src="https://i.postimg.cc/CL1YdJqK/download.jpg"
                     alt=""
                   />
@@ -870,7 +921,11 @@ const IndexPage = (props) => {
             </div>
           </div>
           <div className="bg-video">
-            <img loading="lazy" src="https://i.postimg.cc/JnCMnkw4/image.png" alt="" />
+            <img
+              loading="lazy"
+              src="https://i.postimg.cc/JnCMnkw4/image.png"
+              alt=""
+            />
           </div>
         </section>
         {/* end video */}
