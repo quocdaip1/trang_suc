@@ -96,8 +96,8 @@
               -webkit-text-stroke: 0.1rem var(--primary-color);
             }
           }
-          .icon{
-            &.active{
+          .icon {
+            &.active {
               color: var(--primary-color);
             }
             i {
@@ -167,7 +167,10 @@
             }
           }
           .MuiBox-root {
-            padding: 0 1rem;
+            padding: 3rem 1rem 0;
+            .css-187mznn-MuiSlider-root {
+              color: #cd7642;
+            }
             .text {
               .value {
                 color: var(--primary-color);
