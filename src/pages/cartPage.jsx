@@ -155,7 +155,7 @@ const CartPage = () => {
                       <div className="payment-wraper">
                         <div
                           className={`payment-item ${
-                            radioActive === "r1" ? "active" : ""
+                            radioActive == "r1" ? "active" : ""
                           }`}
                         >
                           <input
@@ -173,7 +173,7 @@ const CartPage = () => {
 
                         <div
                           className={`payment-item ${
-                            radioActive === "r2" ? "active" : ""
+                            radioActive == "r2" ? "active" : ""
                           }`}
                         >
                           <input

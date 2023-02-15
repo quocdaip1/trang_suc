@@ -60,11 +60,6 @@ footer {
         .ft-box-top {
           @include flex(center, space-between);
           margin-bottom: 4rem;
-          .ft-logo {
-            img {
-              height: 8rem;
-            }
-          }
           .ft-social {
             ul {
               @include flex(center, space-between);
@@ -268,6 +263,18 @@ footer {
 
 @media screen and (max-width: 576px) {
   footer {
+    .ft-top {
+      .ft-top-left {
+        .ft-box {
+          .ft-box-top {
+            flex-direction: column;
+            .ft-logo{
+              margin-bottom: 1.6rem;
+            }
+          }
+        }
+      }
+    }
     .ft-center {
       .ft-contact {
         ul {

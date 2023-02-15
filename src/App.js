@@ -28,7 +28,7 @@ function App() {
     if (quantity && item.availabel) {
       dispath(addToCart({ item, quantity }));
       return;
-    } else if (quantity === 0) {
+    } else if (quantity == 0) {
       window.confirm("Error!! Enter a quantity other than 0 !!");
     } else window.confirm("Error!! Availabel: Sold Out !!");
   };
@@ -39,7 +39,7 @@ function App() {
   const [idProductItem, setIdProductItem] = useState("");
   useEffect(() => {
     const item = dataRedux.data.find((item) => {
-      return item.id === idProductItem;
+      return item.id == idProductItem;
     });
     setDetailsProduct(item);
   }, [idProductItem]);

@@ -1,9 +1,8 @@
+@import '../__global/_config.scss';
 #product-page {
   .loading {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flex(center,center);
     #loading {
       margin: 0;
     }
@@ -93,6 +92,8 @@
           }
         }
         .content {
+          @include flex(unset,center);
+          flex-direction: column;
           form {
             label {
               position: relative;
@@ -150,6 +151,7 @@
             }
           }
           .MuiBox-root {
+            padding: 0 1rem;
             .text {
               .value {
                 color: var(--primary-color);
@@ -200,6 +202,7 @@
             display: flex;
             h2 {
               margin-bottom: 0;
+              font-size: 1.2rem;
             }
             .icon {
               transition: all 0.1s;

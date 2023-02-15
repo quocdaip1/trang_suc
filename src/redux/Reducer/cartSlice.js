@@ -12,7 +12,7 @@ const cartSlice = createSlice({
       const quantity = action.payload.quantity;
 
       const itemIndex = state.cart.findIndex((cartItem) => {
-        return cartItem.id === item.id;
+        return cartItem.id == item.id;
       });
       if (itemIndex !== -1) {
         state.total += Math.round(item.price) * quantity;
@@ -33,7 +33,7 @@ const cartSlice = createSlice({
     removeFromCart: (state, action) => {
       const product = action.payload;
       const itemIndex = state.cart.findIndex((item) => {
-        return item.id === action.payload.id;
+        return item.id == action.payload.id;
       });
 
       if (itemIndex !== -1) {
@@ -47,7 +47,7 @@ const cartSlice = createSlice({
     addMoreProduct: (state, action) => {
       const item = action.payload;
       const itemIndex = state.cart.findIndex((cartItem) => {
-        return cartItem.id === item.id;
+        return cartItem.id == item.id;
       });
 
       if (itemIndex !== -1) {
@@ -58,9 +58,8 @@ const cartSlice = createSlice({
       }
     },
     deleteFromCart: (state, action) => {
-      const item = action.payload;
       const itemIndex = state.cart.findIndex((item) => {
-        return item.id === action.payload.id;
+        return item.id == action.payload.id;
       });
 
       if (itemIndex !== -1) {

@@ -17,7 +17,7 @@ const ProductPage = () => {
   const [fullProduct, setFullproduct] = useState([]);
   const params = useParams();
   const [keyParams, setkeyParams] = useState(
-    params.category === "shop" || params.category === "" ? "" : params.category
+    params.category == "shop" || params.category == "" ? "" : params.category
   );
 
   const fetchData = async () => {
@@ -319,7 +319,7 @@ const ProductPage = () => {
                           {list.map((item) => {
                             return (
                               <div
-                                className="col col-lg-4 col-md-6 col-sm-6"
+                                className="col col-lg-4 col-md-6 col-sm-6 col-12"
                                 key={uuid()}
                               >
                                 <ItemSlick item={item} />

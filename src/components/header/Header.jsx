@@ -152,12 +152,17 @@ export default function () {
         <div className="container-fluit">
           <div className="main-hd-wraper bg-35">
             {/* header logo */}
-            <div className="hd-logo" data-aos="zoom-in" data-aos-duration="800">
-              <Link to={"/"}>
-                <img loading="lazy"
-                  src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
+            <div className="hd-logo">
+              <Link className="logo-link" to={"/"}>
+                <img
+                  loading="lazy"
+                  src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
                 />
+                <div className="logo-text">
+                  <span className="title">Quang Phi</span>
+                  <span className="sub-title">luxury piece</span>
+                </div>
               </Link>
             </div>
             {/* end header logo*/}
@@ -183,10 +188,14 @@ export default function () {
                                   key={uuid()}
                                   onMouseOver={() => setTab(item)}
                                   className={`tab-item ${
-                                    tab === item ? "active" : ""
+                                    tab == item ? "active" : ""
                                   }`}
                                 >
-                                  <img loading="lazy" src={imgNav[item]} alt="" />
+                                  <img
+                                    loading="lazy"
+                                    src={imgNav[item]}
+                                    alt=""
+                                  />
                                   {item}
                                 </li>
                               );
@@ -200,7 +209,7 @@ export default function () {
                                 <div
                                   key={uuid()}
                                   className={`tab-item ${
-                                    tab === item ? "active" : ""
+                                    tab == item ? "active" : ""
                                   }`}
                                 >
                                   <div className="row">
@@ -226,7 +235,11 @@ export default function () {
                                     </div>
                                     <div className="col-6">
                                       <div className="img">
-                                        <img loading="lazy" src={imgContent[item]} alt="" />
+                                        <img
+                                          loading="lazy"
+                                          src={imgContent[item]}
+                                          alt=""
+                                        />
                                       </div>
                                     </div>
                                   </div>
@@ -350,8 +363,11 @@ export default function () {
                         <div className="loading">
                           <Loading />
                         </div>
-                      ) : listSearch.length === 0 ? (
-                        <img loading="lazy" src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
+                      ) : listSearch.length == 0 ? (
+                        <img
+                          loading="lazy"
+                          src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
+                        />
                       ) : (
                         <div className="result-wraper">
                           {listSearch.map((item) => {
@@ -387,7 +403,8 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
                         />
@@ -428,32 +445,23 @@ export default function () {
           <div className="main-hd-wraper bg-35">
             {/* logo mobile */}
             <div className="hd-logo">
-              <a href="/">
-                <img loading="lazy"
-                  src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
+              <Link className="logo-link" to={"/"}>
+                <img
+                  loading="lazy"
+                  src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
                 />
-              </a>
+                <div className="logo-text">
+                  <span className="title">Quang Phi</span>
+                  <span className="sub-title">luxury piece</span>
+                </div>
+              </Link>
             </div>
             {/* end logo mobile*/}
 
             {/*menu mobile */}
             <div className="hd-menu">
               <ul className="menu-list">
-                {/* login */}
-                <li
-                  onClick={() => {
-                    setModalLoginOpen(true);
-                    componentDidMount();
-                  }}
-                  className="menu-item bg-yellow"
-                >
-                  <a className="menu-item-link" href="#">
-                    <i className="fa-regular fa-user"></i>
-                  </a>
-                </li>
-                {/* end login*/}
-
                 {/* cart */}
                 <li className="menu-item cart">
                   <a className="menu-item-link" href="#">
@@ -467,7 +475,8 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
                         />
@@ -540,7 +549,7 @@ export default function () {
                     <i className="fa-solid fa-xmark"></i>
                   </a>
                   {/* aside-menu */}
-                  <div
+                  <aside
                     className={`menu-mobile ${openMenuMobile ? "active" : ""}`}
                   >
                     <div className="overlay"></div>
@@ -564,8 +573,11 @@ export default function () {
                               <div className="loading">
                                 <Loading />
                               </div>
-                            ) : listSearch.length === 0 ? (
-                              <img loading="lazy" src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png" />
+                            ) : listSearch.length == 0 ? (
+                              <img
+                                loading="lazy"
+                                src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
+                              />
                             ) : (
                               <div className="mb-result-wraper scroll-custom">
                                 <div className="row">
@@ -589,6 +601,20 @@ export default function () {
                         </div>
                         {/* end mobile search */}
 
+                        {/* login */}
+                        <div
+                          onClick={() => {
+                            setModalLoginOpen(true);
+                            componentDidMount();
+                          }}
+                          className="login-mb bg-yellow"
+                        >
+                          <a className="login-mb-link" href="#">
+                            <i className="fa-regular fa-user"></i>
+                          </a>
+                        </div>
+                        {/* end login*/}
+
                         {/* end aside button */}
                       </div>
 
@@ -607,9 +633,12 @@ export default function () {
                         </li>
 
                         <li
-                          onClick={() =>
-                            handleCateActive(cateActive, setCateActive)
-                          }
+                          onClick={() => {
+                            cateActive
+                              ? componentDidMount()
+                              : componentUnmount();
+                            handleCateActive(cateActive, setCateActive);
+                          }}
                         >
                           <Link to={"#"}>
                             Categories
@@ -643,7 +672,7 @@ export default function () {
                       </ul>
                       {/* end aside-menu mobile*/}
                     </div>
-                  </div>
+                  </aside>
                   {/* end aside-menu*/}
                 </li>
                 {/* end menu button */}

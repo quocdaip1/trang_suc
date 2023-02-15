@@ -25,12 +25,16 @@ const Footer = () => {
                   <div className="ft-box bg-35">
                     <div className="ft-box-top">
                       <div className="ft-logo">
-                        <Link to={"/"} data-aos="zoom-in">
+                        <Link className="logo-link" to={"/"} data-aos="zoom-in">
                           <img
                             loading="lazy"
-                            src="https://i.postimg.cc/HkDkQhYx/logo-removebg-preview.png"
+                            src="https://i.postimg.cc/K8qWvrFL/logo.png"
                             alt=""
                           />
+                          <div className="logo-text">
+                            <span className="title">Quang Phi</span>
+                            <span className="sub-title">luxury piece</span>
+                          </div>
                         </Link>
                       </div>
                       <div className="ft-social">
