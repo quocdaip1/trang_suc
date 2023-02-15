@@ -1,8 +1,8 @@
-@import '../__global/_config.scss';
+@import "../__global/_config.scss";
 #product-page {
   .loading {
     height: 100vh;
-   @include flex(center,center);
+    @include flex(center, center);
     #loading {
       margin: 0;
     }
@@ -48,12 +48,22 @@
       .filter-item {
         padding: 4rem 2rem;
         margin-bottom: 4rem;
-        &:hover {
+        &:hover,
+        &.active {
           .title {
             h2 {
               &::before {
                 width: 100%;
                 filter: drop-shadow(0 0 2rem var(--primary-color));
+              }
+            }
+          }
+        }
+        &.active {
+          .title {
+            h2 {
+              &::before {
+                border-right: none;
               }
             }
           }
@@ -86,13 +96,19 @@
               -webkit-text-stroke: 0.1rem var(--primary-color);
             }
           }
-          i {
-            margin-left: 0.8rem;
-            display: none;
+          .icon{
+            &.active{
+              color: var(--primary-color);
+            }
+            i {
+              font-size: 1.6rem;
+              margin-left: 0.8rem;
+              display: none;
+            }
           }
         }
         .content {
-          @include flex(unset,center);
+          @include flex(unset, center);
           flex-direction: column;
           form {
             label {
@@ -227,7 +243,7 @@
             transition: 0.3s;
             &.active {
               margin-top: 2rem;
-              height: 15rem;
+              height: auto;
             }
           }
         }

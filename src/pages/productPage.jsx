@@ -5,7 +5,7 @@ import Header from "../components/header/Header";
 import ModalLogin from "../components/modals/modalLogin";
 import ModalProduct from "../components/modals/modalProduct";
 import ItemSlick from "../components/slick/ItemSlick";
-import "../style/pages/productPage.scss"
+import "../style/pages/productPage.scss";
 import usePagination from "../hooks/usePagination";
 import Pagination from "@mui/material/Pagination";
 import myAxios from "../service/axios";
@@ -78,13 +78,19 @@ const ProductPage = () => {
                           <span>clear filter</span>
                         </button>
                       </div>
-                      <div className="filter-item category bg-35">
-                        <div className="title">
+                      <div
+                        className={`filter-item category bg-35 ${
+                          filterAct == "cate" ? "active" : ""
+                        }`}
+                      >
+                        <div
+                          onClick={() => handleActFilter("cate")}
+                          className="title"
+                        >
                           <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;category&nbsp;&nbsp;">
                             &nbsp;&nbsp;filter&nbsp;by&nbsp;category&nbsp;&nbsp;
                           </h2>
                           <div
-                            onClick={() => handleActFilter("cate")}
                             className={`icon ${
                               filterAct == "cate" ? "active" : ""
                             }`}
@@ -122,13 +128,19 @@ const ProductPage = () => {
                         </div>
                       </div>
 
-                      <div className="filter-item bg-35">
-                        <div className="title">
+                      <div
+                        className={`filter-item category bg-35 ${
+                          filterAct == "range" ? "active" : ""
+                        }`}
+                      >
+                        <div
+                          onClick={() => handleActFilter("range")}
+                          className="title"
+                        >
                           <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;price &nbsp;">
                             &nbsp;&nbsp;filter&nbsp;by&nbsp;price &nbsp;
                           </h2>
                           <div
-                            onClick={() => handleActFilter("range")}
                             className={`icon ${
                               filterAct == "range" ? "active" : ""
                             }`}
@@ -145,13 +157,19 @@ const ProductPage = () => {
                         </div>
                       </div>
 
-                      <div className="filter-item bg-35">
-                        <div className="title">
+                      <div
+                        className={`filter-item category bg-35 ${
+                          filterAct == "mate" ? "active" : ""
+                        }`}
+                      >
+                        <div
+                          onClick={() => handleActFilter("mate")}
+                          className="title"
+                        >
                           <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;material&nbsp;&nbsp;">
                             &nbsp;&nbsp;filter&nbsp;by&nbsp;material&nbsp;&nbsp;
                           </h2>
                           <div
-                            onClick={() => handleActFilter("mate")}
                             className={`icon ${
                               filterAct == "mate" ? "active" : ""
                             }`}
@@ -205,13 +223,19 @@ const ProductPage = () => {
                         </div>
                       </div>
 
-                      <div className="filter-item bg-35">
-                        <div className="title">
+                      <div
+                        className={`filter-item category bg-35 ${
+                          filterAct == "puri" ? "active" : ""
+                        }`}
+                      >
+                        <div
+                          onClick={() => handleActFilter("puri")}
+                          className="title"
+                        >
                           <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;purify&nbsp;of&nbsp;gold&nbsp;&nbsp;">
                             &nbsp;&nbsp;filter&nbsp;by&nbsp;purify&nbsp;of&nbsp;gold&nbsp;&nbsp;
                           </h2>
                           <div
-                            onClick={() => handleActFilter("puri")}
                             className={`icon ${
                               filterAct == "puri" ? "active" : ""
                             }`}
@@ -249,13 +273,19 @@ const ProductPage = () => {
                         </div>
                       </div>
 
-                      <div className="filter-item bg-35">
-                        <div className="title">
+                      <div
+                        className={`filter-item category bg-35 ${
+                          filterAct == "tag" ? "active" : ""
+                        }`}
+                      >
+                        <div
+                          onClick={() => handleActFilter("tag")}
+                          className="title"
+                        >
                           <h2 data-text="&nbsp;&nbsp;popular&nbsp;tags&nbsp;&nbsp;">
                             &nbsp;&nbsp;popular&nbsp;tags&nbsp;&nbsp;
                           </h2>
                           <div
-                            onClick={() => handleActFilter("tag")}
                             className={`icon ${
                               filterAct == "tag" ? "active" : ""
                             }`}
