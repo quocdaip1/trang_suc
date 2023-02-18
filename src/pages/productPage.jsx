@@ -57,6 +57,7 @@ const ProductPage = () => {
   const [keyCate, setKeyCate] = useState([]);
   const [keyMate, setKeyMate] = useState([]);
   const [keyPurify, setKeyPurify] = useState([]);
+  console.log(keyPurify);
   const [keyPrice, setKeyPrice] = useState([0, 10000]);
   const [result, setresult] = useState([]);
 
@@ -202,9 +203,7 @@ const ProductPage = () => {
             return result;
           })
           .map((item) => {
-            arr2 = [...arr2, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
+            arr2 = [...arr2, ...item];
           });
 
         keyPurify
@@ -215,7 +214,9 @@ const ProductPage = () => {
             return result;
           })
           .map((item) => {
-            arr3 = [...arr3, ...item];
+            arr3 = [...arr3, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
           });
         setresult(arr3);
         return;
@@ -232,9 +233,11 @@ const ProductPage = () => {
           .map((item) => {
             arr3 = [...arr3, ...item];
           });
-        setresult(arr3).filter((item) => {
-          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-        });
+        setresult(
+          arr3.filter((item) => {
+            return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+          })
+        );
         return;
       }
     } else {
