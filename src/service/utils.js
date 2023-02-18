@@ -10,3 +10,12 @@ export const componentUnmount = () => {
   document.body.style.overflow = "unset";
 };
 
+export const checkExist = (element, arr, setArr) => {
+  const newArr = [...arr];
+  if (newArr.includes(element)) {
+    setArr(newArr.filter((item) => item !== element));
+    return;
+  }
+  newArr.push(element);
+  setArr(newArr);
+};

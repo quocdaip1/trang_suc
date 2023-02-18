@@ -12,9 +12,14 @@ import myAxios from "../service/axios";
 import { useParams } from "react-router-dom";
 import RangeSlider from "../components/rangeSlide/RangeSlide";
 import Loading from "../components/loading/Loading";
+import { checkExist } from "../service/utils";
+import { useSelector } from "react-redux";
 
 const ProductPage = () => {
+  //data fetch with params
   const [fullProduct, setFullproduct] = useState([]);
+  const dataRedux = useSelector((state) => state.data.data);
+
   const params = useParams();
   const [keyParams, setkeyParams] = useState(
     params.category == "shop" || params.category == "" ? "" : params.category
@@ -30,29 +35,16 @@ const ProductPage = () => {
         params: queryParams,
       });
       setFullproduct(data.data);
+      setresult(data.data);
     } catch (error) {}
   };
 
   useEffect(() => {
     fetchData();
   }, [params]);
-  //pagination
-  const list = [];
-
-  const [totalPages, startPg, endPg, displayPg] = usePagination(
-    10,
-    fullProduct.length
-  );
-
-  (() => {
-    for (let i = startPg; i < endPg; i++) {
-      const newp = { ...fullProduct[i] };
-      list.push(newp);
-    }
-    return list;
-  })();
   //end
 
+  //filter
   const [filterAct, setFilterAct] = useState("");
   const handleActFilter = (fil) => {
     if (filterAct == fil) {
@@ -62,6 +54,85 @@ const ProductPage = () => {
     setFilterAct(fil);
   };
 
+  const [keyCate, setKeyCate] = useState([]);
+  const [keyMate, setKeyMate] = useState([]);
+  const [keyPurify, setKeyPurify] = useState([]);
+  const [result, setresult] = useState([]);
+
+  const handleFilter = () => {
+    if (keyCate.length || keyMate.length || keyPurify.length) {
+      let arr1 = [];
+      let arr2 = [];
+      let arr3 = [];
+
+      keyCate
+        .map((item) => {
+          const result = (
+            arr3.length ? arr3 : arr2.length ? arr2 : fullProduct
+          ).filter((item2) => {
+            return item2.category.toLowerCase().includes(item.toLowerCase());
+          });
+          return result;
+        })
+        .map((item) => {
+          arr1 = [...arr1, ...item];
+        });
+
+      keyMate
+        .map((item) => {
+          const result = (
+            arr3.length ? arr3 : arr1.length ? arr1 : fullProduct
+          ).filter((item2) => {
+            return item2.name.toLowerCase().includes(item.toLowerCase());
+          });
+          return result;
+        })
+        .map((item) => {
+          arr2 = [...arr2, ...item];
+        });
+
+      keyPurify
+        .map((item) => {
+          const result = (
+            arr2.length ? arr2 : arr1.length ? arr1 : fullProduct
+          ).filter((item2) => {
+            return item2.name.toLowerCase().includes(item.toLowerCase());
+          });
+          return result;
+        })
+        .map((item) => {
+          arr3 = [...arr3, ...item];
+        });
+
+      setresult(arr3.length ? arr3 : arr2.length ? arr2 : arr1);
+
+      return;
+    } else {
+      setresult(dataRedux);
+    }
+  };
+
+  useEffect(() => {
+    handleFilter();
+  }, [keyCate, keyMate, keyPurify]);
+  //
+
+  //pagination
+  const list = [];
+
+  const [totalPages, startPg, endPg, , displayPg] = usePagination(
+    10,
+    result.length
+  );
+
+  (() => {
+    for (let i = startPg; i < endPg; i++) {
+      const newp = { ...result[i] };
+      list.push(newp);
+    }
+    return list;
+  })();
+  //end
   return (
     <div id="product-page" className="bg-black">
       {fullProduct.length ? (
@@ -78,6 +149,7 @@ const ProductPage = () => {
                           <span>clear filter</span>
                         </button>
                       </div>
+
                       <div
                         className={`filter-item category bg-35 ${
                           filterAct == "cate" ? "active" : ""
@@ -105,22 +177,66 @@ const ProductPage = () => {
                         >
                           <form action="">
                             <label htmlFor="cate1">
-                              <input type="checkbox" name="cate" id="cate1" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyCate,
+                                    setKeyCate
+                                  );
+                                }}
+                                type="checkbox"
+                                name="Diamond Ring"
+                                id="cate1"
+                              />
                               <span className="custom-checkbox"></span>
                               ring
                             </label>
                             <label htmlFor="cate2">
-                              <input type="checkbox" name="cate" id="cate2" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyCate,
+                                    setKeyCate
+                                  );
+                                }}
+                                type="checkbox"
+                                name="Earrings"
+                                id="cate2"
+                              />
                               <span className="custom-checkbox"></span>
                               earrings
                             </label>
                             <label htmlFor="cate3">
-                              <input type="checkbox" name="cate" id="cate3" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyCate,
+                                    setKeyCate
+                                  );
+                                }}
+                                type="checkbox"
+                                name="Bracelet"
+                                id="cate3"
+                              />
                               <span className="custom-checkbox"></span>
                               bracelet
                             </label>
                             <label htmlFor="cate4">
-                              <input type="checkbox" name="cate" id="cate4" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyCate,
+                                    setKeyCate
+                                  );
+                                }}
+                                type="checkbox"
+                                name="Necklaces"
+                                id="cate4"
+                              />
                               <span className="custom-checkbox"></span>
                               necklace
                             </label>
@@ -129,7 +245,7 @@ const ProductPage = () => {
                       </div>
 
                       <div
-                        className={`filter-item category bg-35 ${
+                        className={`filter-item bg-35 ${
                           filterAct == "range" ? "active" : ""
                         }`}
                       >
@@ -158,7 +274,7 @@ const ProductPage = () => {
                       </div>
 
                       <div
-                        className={`filter-item category bg-35 ${
+                        className={`filter-item bg-35 ${
                           filterAct == "mate" ? "active" : ""
                         }`}
                       >
@@ -185,8 +301,15 @@ const ProductPage = () => {
                           <form action="">
                             <label htmlFor="materia1">
                               <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyMate,
+                                    setKeyMate
+                                  );
+                                }}
                                 type="checkbox"
-                                name="cate"
+                                name="diamond"
                                 id="materia1"
                               />
                               <span className="custom-checkbox"></span>
@@ -194,8 +317,15 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material2">
                               <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyMate,
+                                    setKeyMate
+                                  );
+                                }}
                                 type="checkbox"
-                                name="cate"
+                                name="gold"
                                 id="material2"
                               />
                               <span className="custom-checkbox"></span>
@@ -203,8 +333,15 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material3">
                               <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyMate,
+                                    setKeyMate
+                                  );
+                                }}
                                 type="checkbox"
-                                name="cate"
+                                name="white gold"
                                 id="material3"
                               />
                               <span className="custom-checkbox"></span>
@@ -212,8 +349,15 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material4">
                               <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyMate,
+                                    setKeyMate
+                                  );
+                                }}
                                 type="checkbox"
-                                name="cate"
+                                name="silver"
                                 id="material4"
                               />
                               <span className="custom-checkbox"></span>
@@ -224,7 +368,7 @@ const ProductPage = () => {
                       </div>
 
                       <div
-                        className={`filter-item category bg-35 ${
+                        className={`filter-item bg-35 ${
                           filterAct == "puri" ? "active" : ""
                         }`}
                       >
@@ -250,22 +394,66 @@ const ProductPage = () => {
                         >
                           <form action="">
                             <label htmlFor="purify1">
-                              <input type="checkbox" name="cate" id="purify1" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyPurify,
+                                    setKeyPurify
+                                  );
+                                }}
+                                type="checkbox"
+                                name="24K"
+                                id="purify1"
+                              />
                               <span className="custom-checkbox"></span>
                               24K
                             </label>
                             <label htmlFor="purify2">
-                              <input type="checkbox" name="cate" id="purify2" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyPurify,
+                                    setKeyPurify
+                                  );
+                                }}
+                                type="checkbox"
+                                name="18K"
+                                id="purify2"
+                              />
                               <span className="custom-checkbox"></span>
                               18K
                             </label>
                             <label htmlFor="purify3">
-                              <input type="checkbox" name="cate" id="purify3" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyPurify,
+                                    setKeyPurify
+                                  );
+                                }}
+                                type="checkbox"
+                                name="14K"
+                                id="purify3"
+                              />
                               <span className="custom-checkbox"></span>
                               14K
                             </label>
                             <label htmlFor="purify4">
-                              <input type="checkbox" name="cate" id="purify4" />
+                              <input
+                                onChange={(e) => {
+                                  checkExist(
+                                    e.target.name,
+                                    keyPurify,
+                                    setKeyPurify
+                                  );
+                                }}
+                                type="checkbox"
+                                name="10K"
+                                id="purify4"
+                              />
                               <span className="custom-checkbox"></span>
                               10K
                             </label>
@@ -274,7 +462,7 @@ const ProductPage = () => {
                       </div>
 
                       <div
-                        className={`filter-item category bg-35 ${
+                        className={`filter-item bg-35 ${
                           filterAct == "tag" ? "active" : ""
                         }`}
                       >
@@ -340,25 +528,31 @@ const ProductPage = () => {
                           to
                           <span>{endPg + 1}</span>
                           of
-                          <span>{fullProduct.length}</span>
+                          <span>{result.length}</span>
                           Result
                         </p>
                       </div>
                       <div className="product-wrapper">
                         <div className="row">
-                          {list.map((item) => {
-                            return (
-                              <div
-                                className="col col-lg-4 col-md-6 col-sm-6 col-12"
-                                key={uuid()}
-                              >
-                                <ItemSlick item={item} />
-                              </div>
-                            );
-                          })}
+                          {result.length ? (
+                            list.map((item) => {
+                              return (
+                                <div
+                                  className="col col-lg-4 col-md-6 col-sm-6 col-12"
+                                  key={uuid()}
+                                >
+                                  <ItemSlick item={item} />
+                                </div>
+                              );
+                            })
+                          ) : (
+                            <h1>nothing</h1>
+                          )}
                           <Pagination
                             count={totalPages}
-                            onChange={(event, value) => displayPg(value)}
+                            onChange={(event, value) => {
+                              displayPg(value);
+                            }}
                           />
                         </div>
                       </div>
