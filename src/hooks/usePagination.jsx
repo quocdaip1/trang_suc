@@ -4,7 +4,6 @@ const usePagination = (limit, total) => {
   const totalPages = Math.ceil(total / limit);
   const [startPg, setStartPg] = useState(0);
   const [endPg, setEndPg] = useState(limit - 1);
-  const [currenPg, setCurrentPg] = useState(1);
 
   const displayPg = (pgNo) => {
     let end_pg = limit * pgNo - 1;
@@ -17,7 +16,7 @@ const usePagination = (limit, total) => {
       setEndPg(end_pg);
     }
   };
-  return [totalPages, startPg, endPg, currenPg, displayPg];
+  return [totalPages, startPg, endPg, displayPg];
 };
 
 export default usePagination;

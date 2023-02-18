@@ -1,18 +1,18 @@
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
-import { useState } from 'react';
+import Box from "@mui/material/Box";
+import Slider from "@mui/material/Slider";
+import { useState } from "react";
 
-export default function RangeSlider() {
-  const [value, setValue] = useState([0,5000]);
+export default function RangeSlider(props) {
+  const { keyPrice, setKeyPrice } = props;
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setKeyPrice(newValue);
   };
 
   return (
     <Box>
       <Slider
-        value={value}
+        value={keyPrice}
         onChange={handleChange}
         valueLabelDisplay="on"
         min={0}
@@ -20,7 +20,10 @@ export default function RangeSlider() {
         marks
         step={10}
       />
-      <span className='text'>Filter Range: <span className='value'>${value[0]}</span> to <span className='value'>${value[1]}</span></span>
+      <span className="text">
+        Filter Range: <span className="value">${keyPrice[0]}</span> to{" "}
+        <span className="value">${keyPrice[1]}</span>
+      </span>
     </Box>
   );
 }

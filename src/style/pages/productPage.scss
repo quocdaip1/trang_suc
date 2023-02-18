@@ -194,6 +194,12 @@
           }
         }
       }
+      .product-wrapper {
+        .not-found {
+          @include flex(center, center);
+          margin: 20rem 0;
+        }
+      }
     }
   }
 }

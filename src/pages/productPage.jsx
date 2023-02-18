@@ -57,6 +57,7 @@ const ProductPage = () => {
   const [keyCate, setKeyCate] = useState([]);
   const [keyMate, setKeyMate] = useState([]);
   const [keyPurify, setKeyPurify] = useState([]);
+  const [keyPrice, setKeyPrice] = useState([0, 10000]);
   const [result, setresult] = useState([]);
 
   const handleFilter = () => {
@@ -65,68 +66,220 @@ const ProductPage = () => {
       let arr2 = [];
       let arr3 = [];
 
-      keyCate
-        .map((item) => {
-          const result = (
-            arr3.length ? arr3 : arr2.length ? arr2 : fullProduct
-          ).filter((item2) => {
-            return item2.category.toLowerCase().includes(item.toLowerCase());
+      if (keyCate.length && keyMate.length && keyPurify.length) {
+        keyCate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr1 = [...arr1, ...item];
           });
-          return result;
-        })
-        .map((item) => {
-          arr1 = [...arr1, ...item];
-        });
-
-      keyMate
-        .map((item) => {
-          const result = (
-            arr3.length ? arr3 : arr1.length ? arr1 : fullProduct
-          ).filter((item2) => {
-            return item2.name.toLowerCase().includes(item.toLowerCase());
+        keyMate
+          .map((item) => {
+            const result = arr1.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr2 = [...arr2, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
           });
-          return result;
-        })
-        .map((item) => {
-          arr2 = [...arr2, ...item];
-        });
-
-      keyPurify
-        .map((item) => {
-          const result = (
-            arr2.length ? arr2 : arr1.length ? arr1 : fullProduct
-          ).filter((item2) => {
-            return item2.name.toLowerCase().includes(item.toLowerCase());
+        keyPurify
+          .map((item) => {
+            const result = arr2.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr3 = [...arr3, ...item];
           });
-          return result;
-        })
-        .map((item) => {
-          arr3 = [...arr3, ...item];
+        setresult(arr3);
+        return;
+      }
+
+      if (keyCate.length && keyMate.length == 0 && keyPurify.length == 0) {
+        keyCate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr1 = [...arr1, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
+          });
+        setresult(arr1);
+        return;
+      }
+
+      if (keyCate.length && keyMate.length && keyPurify.length == 0) {
+        keyCate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr1 = [...arr1, ...item];
+          });
+
+        keyMate
+          .map((item) => {
+            const result = arr1.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr2 = [...arr2, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
+          });
+        setresult(arr2);
+        return;
+      }
+
+      if (keyCate.length && keyMate.length == 0 && keyPurify.length) {
+        keyCate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr1 = [...arr1, ...item];
+          });
+
+        keyPurify
+          .map((item) => {
+            const result = arr1.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr2 = [...arr2, ...item];
+          });
+        setresult(arr2).filter((item) => {
+          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
         });
+        return;
+      }
 
-      setresult(arr3.length ? arr3 : arr2.length ? arr2 : arr1);
+      if (keyCate.length == 0 && keyMate.length && keyPurify.length == 0) {
+        keyMate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr2 = [...arr2, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
+          });
+        setresult(arr2);
+        return;
+      }
 
-      return;
+      if (keyCate.length == 0 && keyMate.length && keyPurify.length) {
+        keyMate
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr2 = [...arr2, ...item].filter((item) => {
+              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+            });
+          });
+
+        keyPurify
+          .map((item) => {
+            const result = arr2.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr3 = [...arr3, ...item];
+          });
+        setresult(arr3);
+        return;
+      }
+
+      if (keyCate.length == 0 && keyMate.length == 0 && keyPurify.length) {
+        keyPurify
+          .map((item) => {
+            const result = fullProduct.filter((item2) => {
+              return item2.name.toLowerCase().includes(item.toLowerCase());
+            });
+            return result;
+          })
+          .map((item) => {
+            arr3 = [...arr3, ...item];
+          });
+        setresult(arr3).filter((item) => {
+          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+        });
+        return;
+      }
     } else {
-      setresult(dataRedux);
+      setresult(
+        dataRedux.filter((item) => {
+          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
+        })
+      );
     }
   };
 
   useEffect(() => {
     handleFilter();
-  }, [keyCate, keyMate, keyPurify]);
+  }, [keyCate, keyMate, keyPurify, keyPrice]);
+
+  const handleClearFilter = () => {
+    setKeyCate([]);
+    setKeyMate([]);
+    setKeyPurify([]);
+    setKeyPrice([0, 10000]);
+  };
+
+  const handleChecked = (x, y) => {
+    if (x.includes(y)) {
+      return true;
+    }
+    return false;
+  };
+
   //
 
   //pagination
   const list = [];
 
-  const [totalPages, startPg, endPg, , displayPg] = usePagination(
+  const [totalPages, startPg, endPg, displayPg] = usePagination(
     10,
     result.length
   );
 
   (() => {
-    for (let i = startPg; i < endPg; i++) {
+    for (
+      let i = startPg;
+      i < (result.length < 10 ? result.length : endPg);
+      i++
+    ) {
       const newp = { ...result[i] };
       list.push(newp);
     }
@@ -145,7 +298,10 @@ const ProductPage = () => {
                   <div className="col col-lg-4 col-md-10 col-sm-10 col-12">
                     <div className="filter-wraper">
                       <div className="heading">
-                        <button className="btn main-btn rs-btn">
+                        <button
+                          onClick={handleClearFilter}
+                          className="btn main-btn rs-btn"
+                        >
                           <span>clear filter</span>
                         </button>
                       </div>
@@ -178,6 +334,11 @@ const ProductPage = () => {
                           <form action="">
                             <label htmlFor="cate1">
                               <input
+                                checked={
+                                  handleChecked(keyCate, "Diamond Ring")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -194,6 +355,11 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="cate2">
                               <input
+                                checked={
+                                  handleChecked(keyCate, "Earrings")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -210,6 +376,11 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="cate3">
                               <input
+                                checked={
+                                  handleChecked(keyCate, "Bracelet")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -226,6 +397,11 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="cate4">
                               <input
+                                checked={
+                                  handleChecked(keyCate, "Necklace")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -234,7 +410,7 @@ const ProductPage = () => {
                                   );
                                 }}
                                 type="checkbox"
-                                name="Necklaces"
+                                name="Necklace"
                                 id="cate4"
                               />
                               <span className="custom-checkbox"></span>
@@ -269,7 +445,10 @@ const ProductPage = () => {
                             filterAct == "range" ? "active" : ""
                           }`}
                         >
-                          <RangeSlider />
+                          <RangeSlider
+                            keyPrice={keyPrice}
+                            setKeyPrice={setKeyPrice}
+                          />
                         </div>
                       </div>
 
@@ -301,6 +480,11 @@ const ProductPage = () => {
                           <form action="">
                             <label htmlFor="materia1">
                               <input
+                                checked={
+                                  handleChecked(keyMate, "diamond")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -317,6 +501,9 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material2">
                               <input
+                                checked={
+                                  handleChecked(keyMate, "gold") ? true : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -333,6 +520,11 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material3">
                               <input
+                                checked={
+                                  handleChecked(keyMate, "white gold")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -349,6 +541,11 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="material4">
                               <input
+                                checked={
+                                  handleChecked(keyMate, "silver")
+                                    ? true
+                                    : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -395,6 +592,9 @@ const ProductPage = () => {
                           <form action="">
                             <label htmlFor="purify1">
                               <input
+                                checked={
+                                  handleChecked(keyPurify, "24K") ? true : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -411,6 +611,9 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="purify2">
                               <input
+                                checked={
+                                  handleChecked(keyPurify, "18K") ? true : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -427,6 +630,9 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="purify3">
                               <input
+                                checked={
+                                  handleChecked(keyPurify, "14K") ? true : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -443,6 +649,9 @@ const ProductPage = () => {
                             </label>
                             <label htmlFor="purify4">
                               <input
+                                checked={
+                                  handleChecked(keyPurify, "10K") ? true : false
+                                }
                                 onChange={(e) => {
                                   checkExist(
                                     e.target.name,
@@ -546,7 +755,12 @@ const ProductPage = () => {
                               );
                             })
                           ) : (
-                            <h1>nothing</h1>
+                            <div className="not-found">
+                              <img
+                                src="https://i.postimg.cc/6p6WNFjD/6195678.png"
+                                alt=""
+                              />
+                            </div>
                           )}
                           <Pagination
                             count={totalPages}
