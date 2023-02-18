@@ -184,6 +184,10 @@
     }
     .shop-wraper {
       .heading {
+        display: none;
+        &.active {
+          display: block;
+        }
         p {
           text-transform: capitalize;
           span {

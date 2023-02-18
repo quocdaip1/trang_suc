@@ -12,7 +12,7 @@ import myAxios from "../service/axios";
 import { useParams } from "react-router-dom";
 import RangeSlider from "../components/rangeSlide/RangeSlide";
 import Loading from "../components/loading/Loading";
-import { checkExist } from "../service/utils";
+import { checkExist, componentUnmount } from "../service/utils";
 import { useSelector } from "react-redux";
 
 const ProductPage = () => {
@@ -40,6 +40,7 @@ const ProductPage = () => {
   };
 
   useEffect(() => {
+    componentUnmount();
     fetchData();
   }, [params]);
   //end
@@ -57,7 +58,6 @@ const ProductPage = () => {
   const [keyCate, setKeyCate] = useState([]);
   const [keyMate, setKeyMate] = useState([]);
   const [keyPurify, setKeyPurify] = useState([]);
-  console.log(keyPurify);
   const [keyPrice, setKeyPrice] = useState([0, 10000]);
   const [result, setresult] = useState([]);
 
@@ -733,12 +733,16 @@ const ProductPage = () => {
                   </div>
                   <div className="col col-lg-8 col-md-10 col-12">
                     <div className="shop-wraper">
-                      <div className="heading">
+                      <div
+                        className={`heading ${result.length ? "active" : ""}`}
+                      >
                         <p>
                           showing
                           <span>{startPg + 1}</span>
                           to
-                          <span>{endPg + 1}</span>
+                          <span>
+                            {result.length > 10 ? endPg + 1 : result.length}
+                          </span>
                           of
                           <span>{result.length}</span>
                           Result
