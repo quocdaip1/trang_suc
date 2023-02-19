@@ -80,9 +80,9 @@ const Footer = () => {
                         data-aos-duration="600"
                       >
                         <li>
-                          <a href="#">
+                          <Link to={'/'}>
                             <i className="fa-regular fa-gem"></i>Home
-                          </a>
+                          </Link>
                         </li>
                         <li>
                           <a href="#">

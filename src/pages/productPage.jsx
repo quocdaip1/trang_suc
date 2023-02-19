@@ -35,7 +35,7 @@ const ProductPage = () => {
         params: queryParams,
       });
       setFullproduct(data.data);
-      setresult(data.data);
+      setResult(data.data);
     } catch (error) {}
   };
 
@@ -59,194 +59,30 @@ const ProductPage = () => {
   const [keyMate, setKeyMate] = useState([]);
   const [keyPurify, setKeyPurify] = useState([]);
   const [keyPrice, setKeyPrice] = useState([0, 10000]);
-  const [result, setresult] = useState([]);
+  const [result, setResult] = useState([]);
 
   const handleFilter = () => {
-    if (keyCate.length || keyMate.length || keyPurify.length) {
-      let arr1 = [];
-      let arr2 = [];
-      let arr3 = [];
-
-      if (keyCate.length && keyMate.length && keyPurify.length) {
-        keyCate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr1 = [...arr1, ...item];
-          });
-        keyMate
-          .map((item) => {
-            const result = arr1.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr2 = [...arr2, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
-          });
-        keyPurify
-          .map((item) => {
-            const result = arr2.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr3 = [...arr3, ...item];
-          });
-        setresult(arr3);
-        return;
-      }
-
-      if (keyCate.length && keyMate.length == 0 && keyPurify.length == 0) {
-        keyCate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr1 = [...arr1, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
-          });
-        setresult(arr1);
-        return;
-      }
-
-      if (keyCate.length && keyMate.length && keyPurify.length == 0) {
-        keyCate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr1 = [...arr1, ...item];
-          });
-
-        keyMate
-          .map((item) => {
-            const result = arr1.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr2 = [...arr2, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
-          });
-        setresult(arr2);
-        return;
-      }
-
-      if (keyCate.length && keyMate.length == 0 && keyPurify.length) {
-        keyCate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr1 = [...arr1, ...item];
-          });
-
-        keyPurify
-          .map((item) => {
-            const result = arr1.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr2 = [...arr2, ...item];
-          });
-        setresult(arr2).filter((item) => {
-          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-        });
-        return;
-      }
-
-      if (keyCate.length == 0 && keyMate.length && keyPurify.length == 0) {
-        keyMate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr2 = [...arr2, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
-          });
-        setresult(arr2);
-        return;
-      }
-
-      if (keyCate.length == 0 && keyMate.length && keyPurify.length) {
-        keyMate
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr2 = [...arr2, ...item];
-          });
-
-        keyPurify
-          .map((item) => {
-            const result = arr2.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr3 = [...arr3, ...item].filter((item) => {
-              return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-            });
-          });
-        setresult(arr3);
-        return;
-      }
-
-      if (keyCate.length == 0 && keyMate.length == 0 && keyPurify.length) {
-        keyPurify
-          .map((item) => {
-            const result = fullProduct.filter((item2) => {
-              return item2.name.toLowerCase().includes(item.toLowerCase());
-            });
-            return result;
-          })
-          .map((item) => {
-            arr3 = [...arr3, ...item];
-          });
-        setresult(
-          arr3.filter((item) => {
-            return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-          })
-        );
-        return;
-      }
-    } else {
-      setresult(
-        dataRedux.filter((item) => {
-          return item.price >= keyPrice[0] && item.price <= keyPrice[1];
-        })
-      );
-    }
+    const filteredProducts = fullProduct.filter(
+      (item) =>
+        (keyCate.length
+          ? keyCate.some((cat) =>
+              item.name.toLowerCase().includes(cat.toLowerCase())
+            )
+          : true) &&
+        (keyMate.length
+          ? keyMate.some((mat) =>
+              item.name.toLowerCase().includes(mat.toLowerCase())
+            )
+          : true) &&
+        (keyPurify.length
+          ? keyPurify.some((pur) =>
+              item.name.toLowerCase().includes(pur.toLowerCase())
+            )
+          : true) &&
+        item.price >= (keyPrice[0] ?? 0) &&
+        item.price <= (keyPrice[1] ?? Infinity)
+    );
+    setResult(filteredProducts);
   };
 
   useEffect(() => {
@@ -273,7 +109,7 @@ const ProductPage = () => {
   const list = [];
 
   const [totalPages, startPg, endPg, displayPg] = usePagination(
-    10,
+    12,
     result.length
   );
 
@@ -741,7 +577,7 @@ const ProductPage = () => {
                           <span>{startPg + 1}</span>
                           to
                           <span>
-                            {result.length > 10 ? endPg + 1 : result.length}
+                            {result.length >= 10 ? endPg : result.length}
                           </span>
                           of
                           <span>{result.length}</span>

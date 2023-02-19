@@ -109,7 +109,7 @@ const CartPage = () => {
                               />
                               <input
                                 type="text"
-                                placeholder="phone number (required)"
+                                placeholder="Phone number (required)"
                               />
                             </div>
 

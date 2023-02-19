@@ -736,14 +736,14 @@ const IndexPage = (props) => {
                 data-aos-easing="linear"
                 data-aos-duration="750"
               >
-                MAY BE YOU HAVE EARNED IT
+                MAYBE YOU HAVE EARNED IT
               </span>
               <h2
                 data-aos="fade-down"
                 data-aos-easing="linear"
                 data-aos-duration="500"
               >
-                On Sale Products
+               Featured products
               </h2>
             </div>
             <div className="on-sale-content">

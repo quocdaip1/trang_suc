@@ -19,3 +19,7 @@ export const checkExist = (element, arr, setArr) => {
   newArr.push(element);
   setArr(newArr);
 };
+
+export const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
