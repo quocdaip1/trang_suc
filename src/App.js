@@ -2,16 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.scss";
-import IndexPage from "./pages/IndexPage";
 import { Routes, Route } from "react-router-dom";
 import ProductPage from "./pages/productPage";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
 import useFetchData from "./hooks/useFetchData";
 import { myContext } from "./components/context/Context";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartPage from "./pages/cartPage";
 import { getData } from "./redux/Reducer/dataSlice";
+import HomePage from "./pages/HomePage";
 function App() {
   //fulldata redux
   const dispath = useDispatch();
@@ -20,7 +20,7 @@ function App() {
     dispath(getData());
   }, []);
 
-  const dataRedux = useSelector(state => state.data);
+  const dataRedux = useSelector((state) => state.data);
   //end
 
   //add-to cart
@@ -51,9 +51,9 @@ function App() {
   //end
 
   //dom
-  window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-});
+  window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
+  });
   //end
 
   return (
@@ -67,11 +67,11 @@ function App() {
         setIdProductItem,
         modalProductOpen,
         setModalProductOpen,
-        setDetailsProduct
+        setDetailsProduct,
       }}
     >
       <Routes>
-        <Route path="/" element={<IndexPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/jewelry/:category" element={<ProductPage />} />
         <Route path="/jwelry/cart" element={<CartPage />} />
       </Routes>
