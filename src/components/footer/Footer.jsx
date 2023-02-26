@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className="ft-top-left">
                   <div className="back-to-top">
                     <a href="#main" className="back-inner">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/gcTvv8RY/7740643.gif"
                         alt=""
@@ -26,7 +26,7 @@ const Footer = () => {
                     <div className="ft-box-top">
                       <div className="ft-logo">
                         <Link className="logo-link" to={"/"} data-aos="zoom-in">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/K8qWvrFL/logo.png"
                             alt=""
@@ -116,7 +116,7 @@ const Footer = () => {
               <div className=" pd-0 col-lg-4">
                 <div data-aos=" zoom-in-up" className="ft-top-right">
                   <div className="map">
-                    <img
+                    <img skeleton="true"
                       loading="lazy"
                       src="https://i.postimg.cc/tT0Q5sNn/z4086.jpg"
                       alt=""

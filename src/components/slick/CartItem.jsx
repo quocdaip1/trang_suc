@@ -24,7 +24,7 @@ const CartItem = (props) => {
   return (
     <li className="cart-item">
       <div className="img">
-        <img loading="lazy" src={item.image} alt="" />
+        <img skeleton="true" loading="lazy" src={item.image} alt="" />
       </div>
       <div className="content">
         <p className="name ellipsis">

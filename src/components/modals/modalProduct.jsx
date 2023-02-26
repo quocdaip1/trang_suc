@@ -28,7 +28,7 @@ const ModalProduct = (props) => {
                 <div className="row">
                   <div className="col col-lg-5 col-md-10 col-12">
                     <div className="detail-img bg-black">
-                      <img loading="lazy" src={item.image} alt="" />
+                      <img skeleton="true" loading="lazy" src={item.image} alt="" />
                     </div>
                   </div>
                   <div className="col col-lg-7 col-md-10 col-12">

@@ -15,10 +15,10 @@ const FadeSlick = (props) => {
   return (
       <Slider {...settings}>
         <div className="banner-img imagesiny">
-          <img loading="lazy" src="https://i.postimg.cc/g07x79fP/download.jpg" />
+          <img skeleton="true" loading="lazy" src="https://i.postimg.cc/g07x79fP/download.jpg" />
         </div>
         <div className="banner-img imagesiny">
-          <img loading="lazy" src="https://i.postimg.cc/y628CXQ0/download.jpg" />
+          <img skeleton="true" loading="lazy" src="https://i.postimg.cc/y628CXQ0/download.jpg" />
         </div>
       </Slider>
   );

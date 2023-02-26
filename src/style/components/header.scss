@@ -141,14 +141,15 @@ header {
                 color: var(--black);
                 width: 1.6rem;
                 height: 1.6rem;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
+                @include flex(center, center);
                 border-radius: 50%;
                 font-size: 1rem;
                 position: absolute;
-                top: 1.4rem;
-                left: 1rem;
+                top: 1.2rem;
+                left: 0.6rem;
+                span {
+                  transform: translateY(.16rem);
+                }
               }
             }
           }
@@ -462,12 +463,12 @@ header {
                     display: inline-block;
                     right: 0;
                     top: 0;
-                    margin-left: .6rem;
+                    margin-left: 0.6rem;
                     .login-mb-link {
                       width: 4.5rem;
                       height: 4.5rem;
                       border: 0.2rem solid #40403b;
-                      @include flex(center,center);
+                      @include flex(center, center);
                     }
                   }
                 }

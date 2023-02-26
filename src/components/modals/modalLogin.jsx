@@ -25,7 +25,7 @@ const ModalLogin = (props) => {
               <div className="col col-lg-6 col-md-12 col-12">
                 <div className="login-img h-100 ">
                   <div className="img h-100">
-                    <img className="h-100"
+                    <img skeleton="true" className="h-100"
                       loading="lazy"
                       src="https://i.postimg.cc/W43Skg8q/download.png"
                       alt=""
@@ -61,7 +61,7 @@ const ModalLogin = (props) => {
                       </span>
                       <div className="social-log w-100">
                         <a href="#" className="btn main-btn">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/wvVBspRT/image.png"
                             alt=""
@@ -69,7 +69,7 @@ const ModalLogin = (props) => {
                           <span>continue with facebook</span>
                         </a>
                         <a href="#" className="btn main-btn">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/Yq1t4kcc/image.png"
                             alt=""

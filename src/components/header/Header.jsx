@@ -154,7 +154,7 @@ export default function () {
             {/* header logo */}
             <div className="hd-logo">
               <Link className="logo-link" to={"/"}>
-                <img
+                <img skeleton="true"
                   loading="lazy"
                   src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
@@ -191,7 +191,7 @@ export default function () {
                                     tab == item ? "active" : ""
                                   }`}
                                 >
-                                  <img
+                                  <img skeleton="true"
                                     loading="lazy"
                                     src={imgNav[item]}
                                     alt=""
@@ -235,7 +235,7 @@ export default function () {
                                     </div>
                                     <div className="col-6">
                                       <div className="img">
-                                        <img
+                                        <img skeleton="true"
                                           loading="lazy"
                                           src={imgContent[item]}
                                           alt=""
@@ -364,7 +364,7 @@ export default function () {
                           <Loading />
                         </div>
                       ) : listSearch.length == 0 ? (
-                        <img
+                        <img skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
                         />
@@ -403,7 +403,7 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img
+                        <img skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
@@ -446,7 +446,7 @@ export default function () {
             {/* logo mobile */}
             <div className="hd-logo">
               <Link className="logo-link" to={"/"}>
-                <img
+                <img skeleton="true"
                   loading="lazy"
                   src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
@@ -475,7 +475,7 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img
+                        <img skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
@@ -488,7 +488,7 @@ export default function () {
                             return (
                               <li key={uuid()} className="cart-item">
                                 <div className="img">
-                                  <img loading="lazy" src={item.image} alt="" />
+                                  <img skeleton="true" loading="lazy" src={item.image} alt="" />
                                 </div>
                                 <div className="content">
                                   <p className="name ellipsis">
@@ -574,7 +574,7 @@ export default function () {
                                 <Loading />
                               </div>
                             ) : listSearch.length == 0 ? (
-                              <img
+                              <img skeleton="true"
                                 loading="lazy"
                                 src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
                               />

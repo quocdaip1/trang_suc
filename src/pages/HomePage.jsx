@@ -139,7 +139,7 @@ const HomePage = (props) => {
   return (
     <LazyLoad
       offset={100}
-      placeholder={<Loading/>}
+      placeholder={'Loading...'}
     >
       <div id="index-page" className="bg-dark">
         <Header />
@@ -216,7 +216,7 @@ const HomePage = (props) => {
                     <div className="col-wraper">
                       <Link to={"/jewelry/bracelet"}>
                         <div className="img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/hGCy9NMv/9056425.gif"
                             alt=""
@@ -225,7 +225,7 @@ const HomePage = (props) => {
                         <h5 className="title">Bracelet</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/W3c1CxGD/2845355.png"
                             alt=""
@@ -238,7 +238,7 @@ const HomePage = (props) => {
                     <div className="col-wraper">
                       <Link to={"/jewelry/diamond ring"}>
                         <div className="img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/KYL7YVVC/8722086.gif"
                             alt=""
@@ -247,7 +247,7 @@ const HomePage = (props) => {
                         <h5 className="title">Diamond Rings</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/x8YqJBqr/508709.png"
                             alt=""
@@ -260,7 +260,7 @@ const HomePage = (props) => {
                     <div className="col-wraper">
                       <Link to={"/jewelry/necklace"}>
                         <div className="img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/YCVK7GKb/9056449.gif"
                             alt=""
@@ -269,7 +269,7 @@ const HomePage = (props) => {
                         <h5 className="title">Gold Necklaces</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/c1Mvy15d/775385.png"
                             alt=""
@@ -282,7 +282,7 @@ const HomePage = (props) => {
                     <div className="col-wraper">
                       <Link to={"/jewelry/earring"}>
                         <div className="img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/02QBNkC3/9056432.gif"
                             alt=""
@@ -291,7 +291,7 @@ const HomePage = (props) => {
                         <h5 className="title">Design Earrings</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/d3B38nTh/3985821.png"
                             alt=""
@@ -321,7 +321,7 @@ const HomePage = (props) => {
                           data-aos-duration="600"
                         >
                           <div className="img">
-                            <img
+                            <img skeleton="true"
                               loading="lazy"
                               src="https://i.postimg.cc/KYL7YVVC/8722086.gif"
                               alt=""
@@ -343,7 +343,7 @@ const HomePage = (props) => {
                           data-aos-easing="linear"
                           data-aos-duration="600"
                         >
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/4dBjxn9K/04.jpg"
                             alt=""
@@ -358,7 +358,7 @@ const HomePage = (props) => {
                           data-aos-easing="linear"
                           data-aos-duration="600"
                         >
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/HWvfGcmR/download.jpg"
                             alt=""
@@ -373,7 +373,7 @@ const HomePage = (props) => {
                           data-aos-duration="600"
                         >
                           <div className="img">
-                            <img
+                            <img skeleton="true"
                               loading="lazy"
                               src="https://i.postimg.cc/YCVK7GKb/9056449.gif"
                               alt=""
@@ -429,7 +429,7 @@ const HomePage = (props) => {
             </div>
             <div className="about-bg">
               <div className="bg-img">
-                <img
+                <img skeleton="true"
                   loading="lazy"
                   src="https://i.postimg.cc/nzqvV3cR/download.jpg"
                   alt=""
@@ -446,7 +446,7 @@ const HomePage = (props) => {
             data-aos-easing="linear"
             data-aos-duration="600"
           >
-            <img
+            <img skeleton="true"
               loading="lazy"
               className="sell-sub-img"
               src="https://i.postimg.cc/y6tvCmw2/download.png"
@@ -512,7 +512,7 @@ const HomePage = (props) => {
           <section className="services bg-35">
             <div className="container">
               <div className="services-title title title-section">
-                <img
+                <img skeleton="true"
                   loading="lazy"
                   data-aos="fade-down"
                   data-aos-easing="linear"
@@ -545,7 +545,7 @@ const HomePage = (props) => {
                     >
                       <div className="item-img imagesiny">
                         <a href="#">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/pd8tKfgj/download.png"
                             alt=""
@@ -554,7 +554,7 @@ const HomePage = (props) => {
                       </div>
                       <div className="item-inner bg-dark">
                         <div className="icon">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/d3B38nTh/3985821.png"
                             alt=""
@@ -579,7 +579,7 @@ const HomePage = (props) => {
                     >
                       <div className="item-img imagesiny">
                         <a href="#">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/D0CV7Bb9/2.png"
                             alt=""
@@ -588,7 +588,7 @@ const HomePage = (props) => {
                       </div>
                       <div className="item-inner bg-dark">
                         <div className="icon">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/x8YqJBqr/508709.png"
                             alt=""
@@ -613,7 +613,7 @@ const HomePage = (props) => {
                     >
                       <div className="item-img imagesiny">
                         <a href="#">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/brwMVkF3/3.png"
                             alt=""
@@ -622,7 +622,7 @@ const HomePage = (props) => {
                       </div>
                       <div className="item-inner bg-dark">
                         <div className="icon">
-                          <img
+                          <img skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/c1Mvy15d/775385.png"
                             alt=""
@@ -652,7 +652,7 @@ const HomePage = (props) => {
                 <div className="col col-lg-3 col-6">
                   <div className="count-item">
                     <div className="count-icon">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/qq5drjPN/4176420.png"
                         alt=""
@@ -675,7 +675,7 @@ const HomePage = (props) => {
                 <div className="col col-lg-3 col-6">
                   <div className="count-item">
                     <div className="count-icon">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/QN23fnJz/456115.png"
                         alt=""
@@ -699,7 +699,7 @@ const HomePage = (props) => {
                 <div className="col col-lg-3 col-6">
                   <div className="count-item">
                     <div className="count-icon">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/tJyzTbHf/8081823.png"
                         alt=""
@@ -723,7 +723,7 @@ const HomePage = (props) => {
                 <div className="col col-lg-3 col-6">
                   <div className="count-item">
                     <div className="count-icon">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/x8zS0Kng/1533506.png"
                         alt=""
@@ -753,7 +753,7 @@ const HomePage = (props) => {
           <section className="on-sale bg-35">
             <div className="container">
               <div className="on-sale-title title title-section">
-                <img
+                <img skeleton="true"
                   loading="lazy"
                   data-aos="fade-down"
                   data-aos-easing="linear"
@@ -780,7 +780,7 @@ const HomePage = (props) => {
                 <div className="row">
                   <div className="col col-lg-6 col-12">
                     <div className="col-left-wraper col-wraper imagesiny">
-                      <img
+                      <img skeleton="true"
                         loading="lazy"
                         data-aos="fade-right"
                         data-aos-easing="linear"
@@ -819,7 +819,7 @@ const HomePage = (props) => {
                             data-aos-easing="linear"
                             data-aos-duration="600"
                           >
-                            <img
+                            <img skeleton="true"
                               loading="lazy"
                               className="small-img"
                               src="https://i.postimg.cc/bvkCGv4Y/download.jpg"
@@ -844,7 +844,7 @@ const HomePage = (props) => {
                             data-aos-easing="linear"
                             data-aos-duration="600"
                           >
-                            <img
+                            <img skeleton="true"
                               loading="lazy"
                               className="small-img"
                               src="https://i.postimg.cc/28g74DQ1/download.jpg"
@@ -932,7 +932,7 @@ const HomePage = (props) => {
                     data-aos-easing="linear"
                     data-aos-duration="600"
                   >
-                    <img
+                    <img skeleton="true"
                       loading="lazy"
                       src="https://i.postimg.cc/CL1YdJqK/download.jpg"
                       alt=""
@@ -951,7 +951,7 @@ const HomePage = (props) => {
               </div>
             </div>
             <div className="bg-video">
-              <img
+              <img skeleton="true"
                 loading="lazy"
                 src="https://i.postimg.cc/JnCMnkw4/image.png"
                 alt=""
