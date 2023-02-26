@@ -670,6 +670,18 @@
         }
       }
 
+      .counter-section {
+        .count-item {
+          .count-title {
+            h2 {
+              span {
+                font-size: 4.2rem;
+              }
+            }
+          }
+        }
+      }
+
       .video {
         .row {
           justify-content: center;
@@ -717,6 +729,9 @@
           .count-title {
             h2 {
               font-size: 3.6rem;
+              span {
+                font-size: 3.6rem;
+              }
             }
             span {
               font-size: 1.2rem;

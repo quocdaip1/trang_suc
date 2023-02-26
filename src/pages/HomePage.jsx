@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CountUp from "react-countup";
 import LazyLoad from "react-lazyload";
-import Loading from "../components/loading/Loading";
 
 const HomePage = (props) => {
   const dataRedux = useSelector((state) => state.data);
