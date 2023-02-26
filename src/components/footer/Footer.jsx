@@ -14,7 +14,8 @@ const Footer = () => {
                 <div className="ft-top-left">
                   <div className="back-to-top">
                     <a href="#main" className="back-inner">
-                      <img skeleton="true"
+                      <img
+                        skeleton="true"
                         loading="lazy"
                         src="https://i.postimg.cc/gcTvv8RY/7740643.gif"
                         alt=""
@@ -25,8 +26,9 @@ const Footer = () => {
                   <div className="ft-box bg-35">
                     <div className="ft-box-top">
                       <div className="ft-logo">
-                        <Link className="logo-link" to={"/"} data-aos="zoom-in">
-                          <img skeleton="true"
+                        <Link className="logo-link" to={"/"}>
+                          <img
+                            skeleton="true"
                             loading="lazy"
                             src="https://i.postimg.cc/K8qWvrFL/logo.png"
                             alt=""
@@ -39,20 +41,12 @@ const Footer = () => {
                       </div>
                       <div className="ft-social">
                         <ul className="social-list">
-                          <li
-                            className="bg-yellow"
-                            data-aos="zoom-out-up"
-                            data-aos-duration="600"
-                          >
+                          <li className="bg-yellow">
                             <Link to={"https://www.facebook.com/"}>
                               <i className="fa-brands fa-facebook-f"></i>
                             </Link>
                           </li>
-                          <li
-                            className="bg-yellow"
-                            data-aos="zoom-out-up"
-                            data-aos-duration="600"
-                          >
+                          <li className="bg-yellow">
                             <Link
                               to={
                                 "https://www.instagram.com/accounts/emailsignup/"
@@ -61,11 +55,7 @@ const Footer = () => {
                               <i className="fa-brands fa-instagram"></i>
                             </Link>
                           </li>
-                          <li
-                            className="bg-yellow"
-                            data-aos="zoom-out-up"
-                            data-aos-duration="600"
-                          >
+                          <li className="bg-yellow">
                             <Link to={"https://www.youtube.com/"}>
                               <i className="fa-brands fa-youtube"></i>
                             </Link>
@@ -74,13 +64,9 @@ const Footer = () => {
                       </div>
                     </div>
                     <div className="ft-nav">
-                      <ul
-                        className="line-bot"
-                        data-aos="zoom-out-up"
-                        data-aos-duration="600"
-                      >
+                      <ul className="line-bot">
                         <li>
-                          <Link to={'/'}>
+                          <Link to={"/"}>
                             <i className="fa-regular fa-gem"></i>Home
                           </Link>
                         </li>
@@ -114,9 +100,10 @@ const Footer = () => {
 
               {/* col right */}
               <div className=" pd-0 col-lg-4">
-                <div data-aos=" zoom-in-up" className="ft-top-right">
+                <div className="ft-top-right">
                   <div className="map">
-                    <img skeleton="true"
+                    <img
+                      skeleton="true"
                       loading="lazy"
                       src="https://i.postimg.cc/tT0Q5sNn/z4086.jpg"
                       alt=""
@@ -130,11 +117,7 @@ const Footer = () => {
           {/* end footer top*/}
 
           {/* footer center */}
-          <div
-            className="ft-center bg-35"
-            data-aos="zoom-out-up"
-            data-aos-duration="600"
-          >
+          <div className="ft-center bg-35">
             <div className="row">
               {/* contact */}
               <div className="col col-lg-6 col-12">
@@ -158,11 +141,7 @@ const Footer = () => {
               {/* end contact */}
               {/* search */}
               <div className="col col-lg-3 col-12">
-                <div
-                  className="ft-search"
-                  data-aos="zoom-out-up"
-                  data-aos-duration="600"
-                >
+                <div className="ft-search">
                   <div className="icon">
                     <i className="fa-solid fa-magnifying-glass"></i>
                   </div>
@@ -172,11 +151,7 @@ const Footer = () => {
               {/* end search */}
               {/* address */}
               <div className="col col-lg-3 col-12">
-                <div
-                  className="ft-address"
-                  data-aos="zoom-out-up"
-                  data-aos-duration="600"
-                >
+                <div className="ft-address">
                   <div className="text">
                     <p>Office Address</p>
                     <span>1/2/3 DT, TPHCM</span>

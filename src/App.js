@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import ProductPage from "./pages/productPage";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
-import useFetchData from "./hooks/useFetchData";
 import { myContext } from "./components/context/Context";
 import React, { useEffect, useState } from "react";
 import CartPage from "./pages/cartPage";
