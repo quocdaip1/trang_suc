@@ -23,6 +23,7 @@ export default function () {
   const navigate = useNavigate();
   const handleNavigate = (key) => {
     navigate(`/jewelry/${key}`);
+    reload();
   };
   //end navigate
 
@@ -79,19 +80,14 @@ export default function () {
   //header tabs
   const [tab, setTab] = useState("diamond ring");
   const cate = dataRedux.data.filter((item) => {
-    return (
-      item.onsale &&
-      item.name /* .toLowerCase() */
-        .includes(tab)
-    );
+    return item.onsale && item.name.toLowerCase().includes(tab);
   });
-  const listNav = ["diamond ring", "earrings", "bracelet", "necklace"];
-  console.log(listNav[0].replace(" ", ""));
+  const listNav = ["diamond ring", "earrings", "bracelet", "necklaces"];
   const imgNav = {
     diamondring: "https://i.postimg.cc/gkshk9qG/9560117.png",
     earrings: "https://i.postimg.cc/zGMVVqLY/9609558.png",
     bracelet: "https://i.postimg.cc/jjbY81mJ/1071664.png",
-    necklace: "https://i.postimg.cc/SxSJ7cJq/6208066.png",
+    necklaces: "https://i.postimg.cc/SxSJ7cJq/6208066.png",
   };
 
   const imgContent = {
@@ -101,7 +97,7 @@ export default function () {
       "https://i.postimg.cc/L870B8h4/b55a2d17cbcce555094739a307a65aa7.jpg",
     bracelet:
       "https://i.postimg.cc/Z50MddbD/Mens-J-Bracelet-Banner-02-FF-674x337.jpg",
-    necklace:
+    necklaces:
       "https://i.postimg.cc/43928Rh6/a9d4cf39cef670c3e9b0613f4afeb720.jpg",
   };
 
@@ -202,7 +198,6 @@ export default function () {
                                   onMouseOver={() => setTab(item)}
                                   onClick={() => {
                                     handleNavigate(item);
-                                    reload();
                                   }}
                                   className={`tab-item ${
                                     tab == item ? "active" : ""
@@ -362,10 +357,10 @@ export default function () {
                         <li
                           onClick={() => {
                             setLoading(true);
-                            setSearchText("white gold necklace");
+                            setSearchText("white gold necklaces");
                           }}
                         >
-                          white gold necklace
+                          white gold necklaces
                         </li>
                         <li
                           onClick={() => {
@@ -687,16 +682,40 @@ export default function () {
                           }`}
                         >
                           <li>
-                            <Link to={"/jewelry/diamond ring"}>Rings</Link>
+                            <a
+                              onClick={() => {
+                                handleNavigate("diamond ring");
+                              }}
+                            >
+                              Rings
+                            </a>
                           </li>
                           <li>
-                            <Link to={"/jewelry/necklaces"}>Necklaces</Link>
+                            <a
+                              onClick={() => {
+                                handleNavigate("necklaces");
+                              }}
+                            >
+                              necklaces
+                            </a>
                           </li>
                           <li>
-                            <Link to={"/jewelry/bracelet"}>Bracelet</Link>
+                            <a
+                              onClick={() => {
+                                handleNavigate("bracelet");
+                              }}
+                            >
+                              Bracelet
+                            </a>
                           </li>
                           <li>
-                            <Link to={"/jewelry/earrings"}>Earrings</Link>
+                            <a
+                              onClick={() => {
+                                handleNavigate("earring");
+                              }}
+                            >
+                              Earrings
+                            </a>
                           </li>
                         </div>
                         {/* end sub-menu mobile*/}

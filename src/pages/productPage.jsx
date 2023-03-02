@@ -272,7 +272,7 @@ const ProductPage = () => {
                               </label>
                               <label
                                 className={`${
-                                  keyParams === "necklace" || keyParams === ""
+                                  keyParams === "necklaces" || keyParams === ""
                                     ? "active"
                                     : ""
                                 }`}
@@ -280,7 +280,7 @@ const ProductPage = () => {
                               >
                                 <input
                                   checked={
-                                    handleChecked(keyCate, "necklace")
+                                    handleChecked(keyCate, "necklaces")
                                       ? true
                                       : false
                                   }
@@ -292,11 +292,11 @@ const ProductPage = () => {
                                     );
                                   }}
                                   type="checkbox"
-                                  name="necklace"
+                                  name="necklaces"
                                   id="cate4"
                                 />
                                 <span className="custom-checkbox"></span>
-                                necklace
+                                necklaces
                               </label>
                             </form>
                           </div>
@@ -595,7 +595,7 @@ const ProductPage = () => {
                                 <a href="#">earrings</a>
                               </li>
                               <li>
-                                <a href="#">necklace</a>
+                                <a href="#">necklaces</a>
                               </li>
                               <li>
                                 <a href="#">bracelet</a>
