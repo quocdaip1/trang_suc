@@ -265,7 +265,7 @@ const HomePage = (props) => {
                             alt=""
                           />
                         </div>
-                        <h5 className="title">Gold necklaces</h5>
+                        <h5 className="title">Gold Necklaces</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
                           <img skeleton="true"

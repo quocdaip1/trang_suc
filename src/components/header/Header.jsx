@@ -80,7 +80,7 @@ export default function () {
   //header tabs
   const [tab, setTab] = useState("diamond ring");
   const cate = dataRedux.data.filter((item) => {
-    return item.onsale && item.name.toLowerCase().includes(tab);
+    return item.onsale && item.name.toLowerCase().includes(tab.toLowerCase());
   });
   const listNav = ["diamond ring", "earrings", "bracelet", "necklaces"];
   const imgNav = {
