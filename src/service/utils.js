@@ -10,6 +10,10 @@ export const componentUnmount = () => {
   document.body.style.overflow = "unset";
 };
 
+export const reload = () => {
+  window.location.reload();
+};
+
 export const checkExist = (element, arr, setArr) => {
   const newArr = [...arr];
   if (newArr.includes(element)) {

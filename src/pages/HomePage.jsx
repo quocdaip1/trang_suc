@@ -243,7 +243,7 @@ const HomePage = (props) => {
                             alt=""
                           />
                         </div>
-                        <h5 className="title">Diamond Rings</h5>
+                        <h5 className="title">Rings</h5>
                         <p>10 Products</p>
                         <span className="overlay-img">
                           <img skeleton="true"
@@ -279,7 +279,7 @@ const HomePage = (props) => {
                   </div>
                   <div className="col col-lg-3 col-sm-6">
                     <div className="col-wraper">
-                      <Link to={"/jewelry/earring"}>
+                      <Link to={"/jewelry/earrings"}>
                         <div className="img">
                           <img skeleton="true"
                             loading="lazy"

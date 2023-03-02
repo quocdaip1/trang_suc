@@ -4,16 +4,27 @@ import uuid from "react-uuid";
 import { useContext, useEffect, useState } from "react";
 import myAxios from "../../service/axios";
 import ItemSlick from "../slick/ItemSlick";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Loading from "../loading/Loading";
 import Slick from "../slick/Slick";
-import { componentDidMount, componentUnmount } from "../../service/utils";
+import {
+  componentDidMount,
+  componentUnmount,
+  reload,
+} from "../../service/utils";
 import { myContext } from "../context/Context";
 import CartItem from "../slick/CartItem";
 
 export default function () {
   const mContext = useContext(myContext);
   const { setModalLoginOpen } = mContext;
+
+  //navigate
+  const navigate = useNavigate();
+  const handleNavigate = (key) => {
+    navigate(`/jewelry/${key}`);
+  };
+  //end navigate
 
   //cart redux
   const cartRedux = useSelector((state) => state.cart);
@@ -66,7 +77,7 @@ export default function () {
   //end
 
   //header tabs
-  const [tab, setTab] = useState("Ring");
+  const [tab, setTab] = useState("diamond ring");
   const cate = dataRedux.data.filter((item) => {
     return (
       item.onsale &&
@@ -74,22 +85,23 @@ export default function () {
         .includes(tab)
     );
   });
-  const listNav = ["Ring", "Earrings", "Bracelet", "Necklace"];
-
+  const listNav = ["diamond ring", "earrings", "bracelet", "necklace"];
+  console.log(listNav[0].replace(" ", ""));
   const imgNav = {
-    Ring: "https://i.postimg.cc/gkshk9qG/9560117.png",
-    Earrings: "https://i.postimg.cc/zGMVVqLY/9609558.png",
-    Bracelet: "https://i.postimg.cc/jjbY81mJ/1071664.png",
-    Necklace: "https://i.postimg.cc/SxSJ7cJq/6208066.png",
+    diamondring: "https://i.postimg.cc/gkshk9qG/9560117.png",
+    earrings: "https://i.postimg.cc/zGMVVqLY/9609558.png",
+    bracelet: "https://i.postimg.cc/jjbY81mJ/1071664.png",
+    necklace: "https://i.postimg.cc/SxSJ7cJq/6208066.png",
   };
 
   const imgContent = {
-    Ring: "https://i.postimg.cc/Wb5yznvk/05e07a75023dcd2c5356bf0fa2fe8140.jpg",
-    Earrings:
+    diamondring:
+      "https://i.postimg.cc/Wb5yznvk/05e07a75023dcd2c5356bf0fa2fe8140.jpg",
+    earrings:
       "https://i.postimg.cc/L870B8h4/b55a2d17cbcce555094739a307a65aa7.jpg",
-    Bracelet:
+    bracelet:
       "https://i.postimg.cc/Z50MddbD/Mens-J-Bracelet-Banner-02-FF-674x337.jpg",
-    Necklace:
+    necklace:
       "https://i.postimg.cc/43928Rh6/a9d4cf39cef670c3e9b0613f4afeb720.jpg",
   };
 
@@ -154,7 +166,8 @@ export default function () {
             {/* header logo */}
             <div className="hd-logo">
               <Link className="logo-link" to={"/"}>
-                <img skeleton="true"
+                <img
+                  skeleton="true"
                   loading="lazy"
                   src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
@@ -187,13 +200,18 @@ export default function () {
                                 <li
                                   key={uuid()}
                                   onMouseOver={() => setTab(item)}
+                                  onClick={() => {
+                                    handleNavigate(item);
+                                    reload();
+                                  }}
                                   className={`tab-item ${
                                     tab == item ? "active" : ""
                                   }`}
                                 >
-                                  <img skeleton="true"
+                                  <img
+                                    skeleton="true"
                                     loading="lazy"
-                                    src={imgNav[item]}
+                                    src={imgNav[item.replace(" ", "")]}
                                     alt=""
                                   />
                                   {item}
@@ -235,9 +253,12 @@ export default function () {
                                     </div>
                                     <div className="col-6">
                                       <div className="img">
-                                        <img skeleton="true"
+                                        <img
+                                          skeleton="true"
                                           loading="lazy"
-                                          src={imgContent[item]}
+                                          src={
+                                            imgContent[item.replace(" ", "")]
+                                          }
                                           alt=""
                                         />
                                       </div>
@@ -364,7 +385,8 @@ export default function () {
                           <Loading />
                         </div>
                       ) : listSearch.length == 0 ? (
-                        <img skeleton="true"
+                        <img
+                          skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
                         />
@@ -403,7 +425,8 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img skeleton="true"
+                        <img
+                          skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
@@ -446,7 +469,8 @@ export default function () {
             {/* logo mobile */}
             <div className="hd-logo">
               <Link className="logo-link" to={"/"}>
-                <img skeleton="true"
+                <img
+                  skeleton="true"
                   loading="lazy"
                   src="https://i.postimg.cc/K8qWvrFL/logo.png"
                   alt=""
@@ -475,7 +499,8 @@ export default function () {
                       ""
                     ) : (
                       <div className="cart-empty">
-                        <img skeleton="true"
+                        <img
+                          skeleton="true"
                           loading="lazy"
                           src="https://i.postimg.cc/50LvyvPz/empty-cart.png"
                           alt=""
@@ -488,7 +513,12 @@ export default function () {
                             return (
                               <li key={uuid()} className="cart-item">
                                 <div className="img">
-                                  <img skeleton="true" loading="lazy" src={item.image} alt="" />
+                                  <img
+                                    skeleton="true"
+                                    loading="lazy"
+                                    src={item.image}
+                                    alt=""
+                                  />
                                 </div>
                                 <div className="content">
                                   <p className="name ellipsis">
@@ -574,7 +604,8 @@ export default function () {
                                 <Loading />
                               </div>
                             ) : listSearch.length == 0 ? (
-                              <img skeleton="true"
+                              <img
+                                skeleton="true"
                                 loading="lazy"
                                 src="https://i.postimg.cc/R0ZHhkfQ/empty-state-removebg-preview.png"
                               />

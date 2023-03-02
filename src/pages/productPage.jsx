@@ -9,10 +9,10 @@ import "../style/pages/productPage.scss";
 import usePagination from "../hooks/usePagination";
 import Pagination from "@mui/material/Pagination";
 import myAxios from "../service/axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import RangeSlider from "../components/rangeSlide/RangeSlide";
 import Loading from "../components/loading/Loading";
-import { checkExist, componentUnmount } from "../service/utils";
+import { checkExist, componentUnmount, reload } from "../service/utils";
 import { useSelector } from "react-redux";
 import LazyLoad from "react-lazyload";
 
@@ -25,6 +25,11 @@ const ProductPage = () => {
   const [keyParams, setkeyParams] = useState(
     params.category == "shop" || params.category == "" ? "" : params.category
   );
+
+  const navigate = useNavigate();
+  const handleNavigate = (key) => {
+    navigate(`/jewelry/${key}`);
+  };
 
   const fetchData = async () => {
     try {
@@ -43,7 +48,7 @@ const ProductPage = () => {
   useEffect(() => {
     componentUnmount();
     fetchData();
-  }, [params]);
+  }, [keyParams]);
   //end
 
   //filter
@@ -100,7 +105,7 @@ const ProductPage = () => {
   const handleChecked = (x, y) => {
     if (x.includes(y)) {
       return true;
-    }
+    } else if (y === keyParams) return true;
     return false;
   };
 
@@ -140,7 +145,12 @@ const ProductPage = () => {
                       <div className="filter-wraper">
                         <div className="heading">
                           <button
-                            onClick={handleClearFilter}
+                            onClick={() => {
+                              handleClearFilter();
+                              setkeyParams("");
+                              handleNavigate("shop");
+                              reload();
+                            }}
                             className="btn main-btn rs-btn"
                           >
                             <span>clear filter</span>
@@ -153,7 +163,9 @@ const ProductPage = () => {
                           }`}
                         >
                           <div
-                            onClick={() => handleActFilter("cate")}
+                            onClick={() => {
+                              handleActFilter("cate");
+                            }}
                             className="title"
                           >
                             <h2 data-text="&nbsp;&nbsp;filter&nbsp;by&nbsp;category&nbsp;&nbsp;">
@@ -173,10 +185,18 @@ const ProductPage = () => {
                             }`}
                           >
                             <form action="">
-                              <label htmlFor="cate1">
+                              <label
+                                className={`${
+                                  keyParams === "diamond ring" ||
+                                  keyParams === ""
+                                    ? "active"
+                                    : ""
+                                }`}
+                                htmlFor="cate1"
+                              >
                                 <input
                                   checked={
-                                    handleChecked(keyCate, "Diamond Ring")
+                                    handleChecked(keyCate, "diamond ring")
                                       ? true
                                       : false
                                   }
@@ -188,16 +208,23 @@ const ProductPage = () => {
                                     );
                                   }}
                                   type="checkbox"
-                                  name="Diamond Ring"
+                                  name="diamond ring"
                                   id="cate1"
                                 />
                                 <span className="custom-checkbox"></span>
                                 ring
                               </label>
-                              <label htmlFor="cate2">
+                              <label
+                                className={`${
+                                  keyParams === "earrings" || keyParams === ""
+                                    ? "active"
+                                    : ""
+                                }`}
+                                htmlFor="cate2"
+                              >
                                 <input
                                   checked={
-                                    handleChecked(keyCate, "Earrings")
+                                    handleChecked(keyCate, "earrings")
                                       ? true
                                       : false
                                   }
@@ -209,16 +236,23 @@ const ProductPage = () => {
                                     );
                                   }}
                                   type="checkbox"
-                                  name="Earrings"
+                                  name="earrings"
                                   id="cate2"
                                 />
                                 <span className="custom-checkbox"></span>
                                 earrings
                               </label>
-                              <label htmlFor="cate3">
+                              <label
+                                className={`${
+                                  keyParams === "bracelet" || keyParams === ""
+                                    ? "active"
+                                    : ""
+                                }`}
+                                htmlFor="cate3"
+                              >
                                 <input
                                   checked={
-                                    handleChecked(keyCate, "Bracelet")
+                                    handleChecked(keyCate, "bracelet")
                                       ? true
                                       : false
                                   }
@@ -230,16 +264,23 @@ const ProductPage = () => {
                                     );
                                   }}
                                   type="checkbox"
-                                  name="Bracelet"
+                                  name="bracelet"
                                   id="cate3"
                                 />
                                 <span className="custom-checkbox"></span>
                                 bracelet
                               </label>
-                              <label htmlFor="cate4">
+                              <label
+                                className={`${
+                                  keyParams === "necklace" || keyParams === ""
+                                    ? "active"
+                                    : ""
+                                }`}
+                                htmlFor="cate4"
+                              >
                                 <input
                                   checked={
-                                    handleChecked(keyCate, "Necklace")
+                                    handleChecked(keyCate, "necklace")
                                       ? true
                                       : false
                                   }
@@ -251,7 +292,7 @@ const ProductPage = () => {
                                     );
                                   }}
                                   type="checkbox"
-                                  name="Necklace"
+                                  name="necklace"
                                   id="cate4"
                                 />
                                 <span className="custom-checkbox"></span>

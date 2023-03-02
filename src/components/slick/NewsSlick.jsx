@@ -14,8 +14,8 @@ const NewsSlick = (props) => {
         {/* <a href="#" className="news-link">
           Read More
         </a> */}
-        <button class="cta">
-          <span class="hover-underline-animation"> Shop now </span>
+        <button className="cta">
+          <span className="hover-underline-animation"> Shop now </span>
           <svg
             fill="white"
             viewBox="0 0 46 16"
