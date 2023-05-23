@@ -46,6 +46,9 @@ header {
               line-height: 12rem;
               font-weight: 700;
               font-family: "Prata", serif;
+              &.active {
+                color: var(--primary-color);
+              }
             }
             .sub-nav-item {
               position: absolute;

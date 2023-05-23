@@ -49,10 +49,8 @@ function App() {
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
   //end
 
-  //dom
-  window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
-  });
+  //loading
+  const [loading, setLoading] = useState(true);
   //end
 
   return (
@@ -67,6 +65,8 @@ function App() {
         modalProductOpen,
         setModalProductOpen,
         setDetailsProduct,
+        loading,
+        setLoading,
       }}
     >
       <Routes>
