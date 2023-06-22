@@ -3,12 +3,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import ProductPage from "./pages/productPage";
+import ProductPage from "./pages/ProductPage";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
 import { myContext } from "./components/context/Context";
 import React, { useEffect, useState } from "react";
-import CartPage from "./pages/cartPage";
+import CartPage from "./pages/CartPage";
 import { getData } from "./redux/Reducer/dataSlice";
 import HomePage from "./pages/HomePage";
 function App() {
@@ -24,12 +24,17 @@ function App() {
 
   //add-to cart
   const handleAddtoCart = (item, quantity) => {
-    if (quantity && item.availabel) {
-      dispath(addToCart({ item, quantity }));
-      return;
-    } else if (quantity == 0) {
-      window.confirm("Error!! Enter a quantity other than 0 !!");
-    } else window.confirm("Error!! Availabel: Sold Out !!");
+    if (userLogin) {
+      if (quantity && item.availabel) {
+        dispath(addToCart({ item, quantity }));
+        return;
+      } else if (quantity == 0) {
+        window.confirm("Error!! Enter a quantity other than 0 !!");
+      } else window.confirm("Error!! Availabel: Sold Out !!");
+    } else {
+      window.alert("Please Login First");
+      setModalLoginOpen(true);
+    }
   };
   //end
 
@@ -45,8 +50,15 @@ function App() {
   //end
 
   //modal state
+  const [userLogin, setUserLogin] = useState(
+    localStorage.getItem("user")
+      ? JSON.parse(localStorage.getItem("user"))
+      : undefined
+  );
   const [modalProductOpen, setModalProductOpen] = useState(false);
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
+  const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
+
   //end
 
   //loading
@@ -60,6 +72,8 @@ function App() {
         handleAddtoCart,
         modalLoginOpen,
         setModalLoginOpen,
+        modalRegisterOpen,
+        setModalRegisterOpen,
         idProductItem,
         setIdProductItem,
         modalProductOpen,
@@ -67,6 +81,8 @@ function App() {
         setDetailsProduct,
         loading,
         setLoading,
+        userLogin,
+        setUserLogin,
       }}
     >
       <Routes>

@@ -10,6 +10,7 @@ import "../style/pages/cartPage.scss";
 import { DatePicker, Form } from "antd";
 import { useState } from "react";
 import LazyLoad from "react-lazyload";
+import ModalRegister from "../components/modals/modalRegister";
 
 const CartPage = () => {
   //cart redux
@@ -213,6 +214,7 @@ const CartPage = () => {
         </div>
         <Footer />
         <ModalLogin />
+        <ModalRegister />
         <ModalProduct />
       </div>
     </LazyLoad>

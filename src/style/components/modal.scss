@@ -177,7 +177,8 @@
 //end
 
 //css modal login
-#modal-login {
+#modal-login ,
+#modal-register {
   display: none;
   &.active {
     display: block;
@@ -255,15 +256,29 @@
           flex-direction: column;
           .input-box {
             margin-bottom: 1rem;
-            input {
+            .form-group{
               margin-bottom: 2rem;
-              display: block;
-              border: 0;
-              height: 6rem;
-              padding: 0 5rem 0 3rem;
-              background-color: #353530;
-              color: var(--gray-1);
-              width: 100%;
+              text-align: left;
+              input {
+                display: block;
+                border: 0;
+                height: 6rem;
+                padding: 0 5rem 0 3rem;
+                background-color: #353530;
+                color: var(--gray-1);
+                width: 100%;
+                margin-bottom: .4rem;
+                &.invalid {
+                  border: .01rem solid red;
+                }
+              }
+              span{
+                color: red;
+                text-transform:uppercase;
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: .2rem;
+              }
             }
           }
           .forgot-link {
@@ -271,6 +286,9 @@
             color: var(--white);
             display: block;
             text-transform: capitalize;
+          }
+          .register-link{
+            margin-top: 0.4rem;
           }
           .login-btn {
             line-height: 4.4rem;

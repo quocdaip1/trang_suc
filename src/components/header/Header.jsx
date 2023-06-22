@@ -16,9 +16,6 @@ import { myContext } from "../context/Context";
 import CartItem from "../slick/CartItem";
 
 export default function () {
-  const mContext = useContext(myContext);
-  const { setModalLoginOpen } = mContext;
-
   //navigate
   const navigate = useNavigate();
   const handleNavigate = (key) => {
@@ -26,6 +23,11 @@ export default function () {
     reload();
   };
   //end navigate
+
+  //context
+  const mContext = useContext(myContext);
+  const { setModalLoginOpen, userLogin ,setUserLogin} = mContext;
+  //end context
 
   //cart redux
   const cartRedux = useSelector((state) => state.cart);
@@ -132,6 +134,12 @@ export default function () {
     },
   ];
   //end
+
+  //handle logout
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUserLogin(undefined)
+  }
 
   return (
     <header>
@@ -287,20 +295,6 @@ export default function () {
             {/* Header Menu */}
             <div className="hd-menu">
               <ul className="menu-list">
-                {/* user */}
-                <li
-                  onClick={() => {
-                    setModalLoginOpen(true);
-                    componentDidMount();
-                  }}
-                  className="menu-item bg-yellow"
-                >
-                  <a className="menu-item-link" href="#">
-                    <i className="fa-regular fa-user"></i>
-                  </a>
-                </li>
-                {/* end user*/}
-
                 {/* search */}
                 <li className="menu-item search bg-yellow">
                   <a
@@ -415,7 +409,7 @@ export default function () {
                       <span>{cartRedux.cart.length}</span>
                     </span>
                   </a>
-                  <div className="cart-dropw-down bg-35">
+                  <div className="drop cart-dropw-down bg-35">
                     {cartRedux.cart.length ? (
                       ""
                     ) : (
@@ -449,6 +443,38 @@ export default function () {
                   </div>
                 </li>
                 {/* end cart*/}
+                {/* user */}
+                {userLogin ? (
+                  <li className="menu-item user bg-yellow">
+                    <a className="menu-item-link" href="#">
+                      <img
+                        style={{ position: "relative", top: "-3px" }}
+                        className="w-100 h-100"
+                        src="https://i.postimg.cc/CMqt7f1Z/image.png"
+                        alt=""
+                      />
+                    </a>
+                    <div className="drop user-dropw-down bg-35">
+                     <ul>
+                      <li><a onClick={handleLogout} className="w-100" href="#">Log out</a></li>
+                     </ul>
+                    </div>
+                  </li>
+                ) : (
+                  <li
+                    onClick={() => {
+                      setModalLoginOpen(true);
+                      componentDidMount();
+                    }}
+                    className="menu-item bg-yellow"
+                  >
+                    <a className="menu-item-link" href="#">
+                      <i className="fa-regular fa-user"></i>
+                    </a>
+                  </li>
+                )}
+
+                {/* end user*/}
               </ul>
             </div>
             {/* end Header Menu*/}

@@ -5,7 +5,7 @@ import { myContext } from "../context/Context";
 
 const ModalProduct = (props) => {
   const mContext = useContext(myContext);
-  const { item, handleAddtoCart, modalProductOpen, setModalProductOpen } =
+  const { item, handleAddtoCart, modalProductOpen, setModalProductOpen} =
     mContext;
   const [quantity, setQuantity] = useState(1);
   return (

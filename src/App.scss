@@ -68,6 +68,10 @@ a:hover {
   color: var(--primary-color) !important;
 }
 
+.link{
+  text-decoration: underline;
+}
+
 .bg-yellow:hover > a {
   background: var(--primary-color) !important;
   color: var(--white) !important;

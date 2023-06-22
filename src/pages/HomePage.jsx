@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CountUp from "react-countup";
 import LazyLoad from "react-lazyload";
+import ModalRegister from "../components/modals/modalRegister";
 
 const HomePage = (props) => {
   const dataRedux = useSelector((state) => state.data);
@@ -1004,6 +1005,7 @@ const HomePage = (props) => {
         {/* modal login */}
         <ModalLogin />
         {/* end modal login */}
+        <ModalRegister />
       </div>
     </LazyLoad>
   );

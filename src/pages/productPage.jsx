@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import LazyLoad from "react-lazyload";
 import { useContext } from "react";
 import { myContext } from "../components/context/Context";
+import ModalRegister from "../components/modals/modalRegister";
 
 const ProductPage = () => {
   //data fetch with params
@@ -683,6 +684,7 @@ const ProductPage = () => {
           </div>
           <ModalLogin />
           <ModalProduct />
+        <ModalRegister/>
           <Footer />
         </>
       </div>
