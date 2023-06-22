@@ -7,13 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 import myStore, { persistor } from "./redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import DefaultLayout from "./pages/DefaultLayout/DefaultLayout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={myStore}>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
-        <App />
+        <DefaultLayout>
+          <App />
+        </DefaultLayout>
       </BrowserRouter>
     </PersistGate>
   </Provider>

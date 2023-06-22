@@ -1,16 +1,10 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import uuid from "react-uuid";
-import Footer from "../components/footer/Footer";
-import Header from "../components/header/Header";
-import ModalLogin from "../components/modals/modalLogin";
-import ModalProduct from "../components/modals/modalProduct";
 import CartItem from "../components/slick/CartItem";
 import "../style/pages/cartPage.scss";
 import { DatePicker, Form } from "antd";
 import { useState } from "react";
-import LazyLoad from "react-lazyload";
-import ModalRegister from "../components/modals/modalRegister";
 
 const CartPage = () => {
   //cart redux
@@ -55,9 +49,7 @@ const CartPage = () => {
   //end
 
   return (
-    <LazyLoad offset={100} placeholder={"Loading..."}>
       <div id="cart-page" className="bg-black">
-        <Header />
         <div id="main">
           <div className="container">
             <div className="cart-wraper">
@@ -212,12 +204,7 @@ const CartPage = () => {
             </div>
           </div>
         </div>
-        <Footer />
-        <ModalLogin />
-        <ModalRegister />
-        <ModalProduct />
       </div>
-    </LazyLoad>
   );
 };
 
