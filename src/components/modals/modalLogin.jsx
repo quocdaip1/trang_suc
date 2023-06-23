@@ -42,7 +42,8 @@ const ModalLogin = (props) => {
       }
     }
   };
-  const handleSubmitValidate = () => {
+  const handleSubmitValidate = (e) => {
+    e.stopPropagation();
     validate("username", username);
     validate("password", password);
     if (accept) {
@@ -142,7 +143,7 @@ const ModalLogin = (props) => {
                         </a>
                       </span>
                       <button
-                        onClick={handleSubmitValidate}
+                        onClick={e=>handleSubmitValidate(e)}
                         className="btn login-btn border-btn mt-20"
                       >
                         <span>login</span>

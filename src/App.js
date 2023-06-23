@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import CartPage from "./pages/CartPage";
 import { getData } from "./redux/Reducer/dataSlice";
 import HomePage from "./pages/HomePage";
+import DefaultLayout from "./pages/DefaultLayout/DefaultLayout"
 function App() {
   //fulldata redux
   const dispath = useDispatch();
@@ -85,11 +86,13 @@ function App() {
         setUserLogin,
       }}
     >
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/jewelry/:category" element={<ProductPage />} />
-        <Route path="/jwelry/cart" element={<CartPage />} />
-      </Routes>
+      <DefaultLayout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/jewelry/:category" element={<ProductPage />} />
+          <Route path="/jwelry/cart" element={<CartPage />} />
+        </Routes>
+      </DefaultLayout>
     </myContext.Provider>
   );
 }

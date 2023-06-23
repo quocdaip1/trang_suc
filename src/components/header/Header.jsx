@@ -27,6 +27,8 @@ export default function () {
   //context
   const mContext = useContext(myContext);
   const { setModalLoginOpen, userLogin ,setUserLogin} = mContext;
+
+  console.log(setModalLoginOpen,userLogin)
   //end context
 
   //cart redux
