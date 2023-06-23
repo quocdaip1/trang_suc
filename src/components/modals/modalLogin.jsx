@@ -9,7 +9,6 @@ const ModalLogin = (props) => {
   const usersRedux = useSelector((state) => state.user.users);
   const navigate = useNavigate();
   const {
-    setUserLogin,
     modalLoginOpen,
     setModalLoginOpen,
     setModalRegisterOpen,
@@ -58,6 +57,9 @@ const ModalLogin = (props) => {
           }))
           : setFildPassMess("The password is incorrect.");
           navigate("/");
+      }
+      else{
+        setFildNameMess("The username does not exist.");
       }
 
     }
@@ -135,6 +137,8 @@ const ModalLogin = (props) => {
                           onClick={() => {
                             setModalRegisterOpen(true);
                             setModalLoginOpen(false);
+                            setFildNameMess('');
+                            setFildPassMess('');
                           }}
                           className="link register-link"
                           href="#"

@@ -59,6 +59,7 @@ function App() {
   const [modalProductOpen, setModalProductOpen] = useState(false);
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
   const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
+  console.log(modalRegisterOpen)
 
   //end
 

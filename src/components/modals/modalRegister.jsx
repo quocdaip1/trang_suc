@@ -51,7 +51,8 @@ const ModalRegister = (props) => {
       }
     }
   };
-  const handleSubmitValidate =async() => {
+  const handleSubmitValidate =async(e) => {
+    e.stopPropagation()
     validate("username", username);
     validate("password", password);
     validate("confirm", confirmPass);
@@ -138,7 +139,7 @@ const ModalRegister = (props) => {
                         </div>
                       </div>
                       <button
-                        onClick={handleSubmitValidate}
+                        onClick={e=>handleSubmitValidate(e)}
                         className="btn login-btn border-btn mt-20 my-5"
                       >
                         <span>register</span>
@@ -149,6 +150,9 @@ const ModalRegister = (props) => {
                           onClick={() => {
                             setModalLoginOpen(true);
                             setModalRegisterOpen(false);
+                            setFildNameMess('');
+                            setFildPassMess('');
+                            setConfirmMess('');
                           }}
                           className="link register-link"
                           href="#"

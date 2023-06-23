@@ -2,6 +2,7 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import ModalLogin from "../../components/modals/modalLogin";
+import ModalRegister from "../../components/modals/modalRegister";
 import ModalProduct from "../../components/modals/modalProduct";
 
 const DefaultLayout = ({ children }) => {
@@ -11,6 +12,7 @@ const DefaultLayout = ({ children }) => {
         <Header />
         {children}
         <ModalLogin />
+        <ModalRegister/>
         <ModalProduct />
         <Footer />
       {/* </LazyLoad> */}
