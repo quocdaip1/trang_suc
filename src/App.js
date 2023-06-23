@@ -8,9 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
 import { myContext } from "./components/context/Context";
 import { getData } from "./redux/Reducer/dataSlice";
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage"
-import CartPage from "./pages/CartPage";
+import HomePage from "./pages/homePage";
+import ProductPage from "./pages/productPage"
+import CartPage from "./pages/cartPage";
 import DefaultLayout from "./pages/DefaultLayout/DefaultLayout"
 function App() {
   //fulldata redux
