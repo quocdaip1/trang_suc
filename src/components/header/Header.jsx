@@ -27,8 +27,6 @@ export default function () {
   //context
   const mContext = useContext(myContext);
   const { setModalLoginOpen, userLogin ,setUserLogin} = mContext;
-
-  console.log(setModalLoginOpen,userLogin)
   //end context
 
   //cart redux
@@ -517,7 +515,7 @@ export default function () {
                       <span>{cartRedux.cart.length}</span>
                     </span>
                   </a>
-                  <div className="cart-dropw-down bg-35">
+                  <div className="drop cart-dropw-down bg-35">
                     {cartRedux.cart.length ? (
                       ""
                     ) : (
