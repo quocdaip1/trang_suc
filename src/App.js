@@ -1,16 +1,16 @@
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
-import ProductPage from "./pages/ProductPage";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./redux/Reducer/cartSlice";
 import { myContext } from "./components/context/Context";
-import React, { useEffect, useState } from "react";
-import CartPage from "./pages/CartPage";
 import { getData } from "./redux/Reducer/dataSlice";
 import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage"
+import CartPage from "./pages/CartPage";
 import DefaultLayout from "./pages/DefaultLayout/DefaultLayout"
 function App() {
   //fulldata redux
