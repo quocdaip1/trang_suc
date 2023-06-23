@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { componentUnmount } from "../../service/utils";
 import { myContext } from "../context/Context";
 import { useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ModalLogin = (props) => {
   const mContext = useContext(myContext);
@@ -187,4 +187,4 @@ const ModalLogin = (props) => {
   );
 };
 
-export default ModalLogin;
+export default memo(ModalLogin);

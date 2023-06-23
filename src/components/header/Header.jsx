@@ -1,7 +1,7 @@
 import "../../style/components/header.scss";
 import { useSelector } from "react-redux";
 import uuid from "react-uuid";
-import { useContext, useEffect, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 import myAxios from "../../service/axios";
 import ItemSlick from "../slick/ItemSlick";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ import {
 import { myContext } from "../context/Context";
 import CartItem from "../slick/CartItem";
 
-export default function () {
+const Header = () => {
   //navigate
   const navigate = useNavigate();
   const handleNavigate = (key) => {
@@ -762,3 +762,5 @@ export default function () {
     </header>
   );
 }
+
+export default memo(Header);

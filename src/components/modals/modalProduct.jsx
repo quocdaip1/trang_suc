@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { componentUnmount } from "../../service/utils";
 import "../../style//components/modal.scss";
 import { myContext } from "../context/Context";
@@ -171,4 +171,4 @@ const ModalProduct = (props) => {
   );
 };
 
-export default ModalProduct;
+export default memo(ModalProduct);

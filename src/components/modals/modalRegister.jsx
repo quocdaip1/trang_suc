@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { componentUnmount } from "../../service/utils";
 import { myContext } from "../context/Context";
 import { useDispatch, useSelector } from "react-redux";
@@ -172,4 +172,4 @@ const ModalRegister = (props) => {
   );
 };
 
-export default ModalRegister;
+export default memo(ModalRegister);

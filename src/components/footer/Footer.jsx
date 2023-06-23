@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "../../style/components/footer.scss";
 import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
@@ -181,4 +182,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);
