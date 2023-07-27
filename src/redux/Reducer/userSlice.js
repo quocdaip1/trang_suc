@@ -21,15 +21,12 @@ const userSlice = createSlice({
       );
 
       if (!existingUser) {
-        console.log('ok')
         return {
           ...state,
           users: [...state.users, { id, username, password }],
           success: true,
         };
       } else {
-        console.log('no')
-
         return {
           ...state,
           success: false,
